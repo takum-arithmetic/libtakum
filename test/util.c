@@ -1226,7 +1226,7 @@ run_unit_test_on_type(const struct unit_test_block *utb,
 
 {
 	struct sampler sampler = { 0 };
-	size_t failed_count = 0;
+	uint64_t failed_count = 0;
 
 	/*
 	 * We iterate over (almost) all takums of the given type,
@@ -1246,9 +1246,10 @@ run_unit_test_on_type(const struct unit_test_block *utb,
 			sampler.current_count);
 	} while (!sampler_next(&sampler));
 
-	printf("%s: %s_%s: %zu/%zu unit tests passed.\n", argv0,
-	       takum_type_parameters[takum_type].name, utb->function_name,
-	       sampler.target_count - failed_count, sampler.target_count);
+	printf("%s: %s_%s: %" PRIu64 "/%" PRIu64 " unit tests passed.\n",
+	       argv0, takum_type_parameters[takum_type].name,
+	       utb->function_name, sampler.target_count - failed_count,
+	       sampler.target_count);
 
 	return (failed_count > 0) ? 1 : 0;
 }
