@@ -19,10 +19,10 @@ static const struct unit_test_block tanh_utb = {
 		.takum16_function   = takum16_tanh,
 		.takum32_function   = takum32_tanh,
 		.takum64_function   = takum64_tanh,
-		.takum_linear8_function    = takum_linear8_tanh,
-		.takum_linear16_function   = takum_linear16_tanh,
-		.takum_linear32_function   = takum_linear32_tanh,
-		.takum_linear64_function   = takum_linear64_tanh,
+		.takum_log8_function    = takum_log8_tanh,
+		.takum_log16_function   = takum_log16_tanh,
+		.takum_log32_function   = takum_log32_tanh,
+		.takum_log64_function   = takum_log64_tanh,
 	},
 };
 

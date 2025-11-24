@@ -19,10 +19,10 @@ static const struct unit_test_block square_root_utb = {
 		.takum16_function   = takum16_square_root,
 		.takum32_function   = takum32_square_root,
 		.takum64_function   = takum64_square_root,
-		.takum_linear8_function    = takum_linear8_square_root,
-		.takum_linear16_function   = takum_linear16_square_root,
-		.takum_linear32_function   = takum_linear32_square_root,
-		.takum_linear64_function   = takum_linear64_square_root,
+		.takum_log8_function    = takum_log8_square_root,
+		.takum_log16_function   = takum_log16_square_root,
+		.takum_log32_function   = takum_log32_square_root,
+		.takum_log64_function   = takum_log64_square_root,
 	},
 };
 

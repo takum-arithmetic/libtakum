@@ -81,7 +81,7 @@ get_c_and_return_shift(uint16_t in, int_fast16_t *c)
 }
 
 float
-codec_takum8_to_l(takum8 t)
+codec_takum_log8_to_l(takum_log8 t)
 {
 	const union util_takum8_union in = {
 		.value = t,
@@ -92,7 +92,7 @@ codec_takum8_to_l(takum8 t)
 	/* Catch special cases */
 	if (t == 0) {
 		return -INFINITY;
-	} else if (t == TAKUM8_NAR) {
+	} else if (t == TAKUM_LOG8_NAR) {
 		return NAN;
 	}
 
@@ -113,7 +113,7 @@ codec_takum8_to_l(takum8 t)
 }
 
 float
-codec_takum16_to_l(takum16 t)
+codec_takum_log16_to_l(takum_log16 t)
 {
 	const union util_takum16_union in = {
 		.value = t,
@@ -124,7 +124,7 @@ codec_takum16_to_l(takum16 t)
 	/* Catch special cases */
 	if (t == 0) {
 		return -INFINITY;
-	} else if (t == TAKUM16_NAR) {
+	} else if (t == TAKUM_LOG16_NAR) {
 		return NAN;
 	}
 
@@ -145,7 +145,7 @@ codec_takum16_to_l(takum16 t)
 }
 
 double
-codec_takum32_to_l(takum32 t)
+codec_takum_log32_to_l(takum_log32 t)
 {
 	const union util_takum32_union in = {
 		.value = t,
@@ -156,7 +156,7 @@ codec_takum32_to_l(takum32 t)
 	/* Catch special cases */
 	if (t == 0) {
 		return -INFINITY;
-	} else if (t == TAKUM32_NAR) {
+	} else if (t == TAKUM_LOG32_NAR) {
 		return NAN;
 	}
 
@@ -176,7 +176,7 @@ codec_takum32_to_l(takum32 t)
 }
 
 long double
-codec_takum64_to_l(takum64 t)
+codec_takum_log64_to_l(takum_log64 t)
 {
 #if LDBL_MANT_DIG >= 64
 	const union util_takum64_union in = {
@@ -188,7 +188,7 @@ codec_takum64_to_l(takum64 t)
 	/* Catch special cases */
 	if (t == 0) {
 		return -INFINITY;
-	} else if (t == TAKUM64_NAR) {
+	} else if (t == TAKUM_LOG64_NAR) {
 		return NAN;
 	}
 
@@ -208,7 +208,7 @@ codec_takum64_to_l(takum64 t)
 	       ((long double)c + ldexpl((long double)M, -64));
 #else
 #pragma message                                                                \
-	"Extended float format is too small to hold what takum64 offers, takum64 decoding is stubbed"
+	"Extended float format is too small to hold what takum_log64 offers, takum_log64 decoding is stubbed"
 	(void)t;
 
 	return NAN;
@@ -729,14 +729,15 @@ codec_linear_l_from_extended_float(long double f)
 	return (1 - 2 * s) * (c + m);
 }
 
-takum8
-codec_takum8_from_s_and_l(bool s, float l)
+takum_log8
+codec_takum_log8_from_s_and_l(bool s, float l)
 {
-	return takum8_from_takum32(codec_takum32_from_s_and_l(s, l));
+	return takum_log8_from_takum_log32(
+		codec_takum_log32_from_s_and_l(s, l));
 }
 
-takum16
-codec_takum16_from_s_and_l(bool s, double l)
+takum_log16
+codec_takum_log16_from_s_and_l(bool s, double l)
 {
 	uint_fast8_t DR;
 	uint8_t p;
@@ -746,7 +747,7 @@ codec_takum16_from_s_and_l(bool s, double l)
 	const double bound = 254.9375;
 
 	if (isnan(l) || (isinf(l) && l > 0)) {
-		return TAKUM16_NAR;
+		return TAKUM_LOG16_NAR;
 	} else if (isinf(l) && l < 0) {
 		return 0;
 	}
@@ -791,8 +792,8 @@ codec_takum16_from_s_and_l(bool s, double l)
 	       (uint16_t)M;
 }
 
-takum32
-codec_takum32_from_s_and_l(bool s, long double l)
+takum_log32
+codec_takum_log32_from_s_and_l(bool s, long double l)
 {
 	uint_fast8_t DR;
 	uint8_t p;
@@ -802,7 +803,7 @@ codec_takum32_from_s_and_l(bool s, long double l)
 	const long double bound = 254.99999904632568359375L;
 
 	if (isnan(l) || (isinf(l) && l > 0)) {
-		return TAKUM32_NAR;
+		return TAKUM_LOG32_NAR;
 	} else if (isinf(l) && l < 0) {
 		return 0;
 	}
@@ -844,8 +845,8 @@ codec_takum32_from_s_and_l(bool s, long double l)
 	       (uint32_t)M;
 }
 
-takum64
-codec_takum64_from_s_and_l(bool s, long double l)
+takum_log64
+codec_takum_log64_from_s_and_l(bool s, long double l)
 {
 #if (LDBL_MANT_DIG == 53 && LDBL_MAX_EXP == 1024) ||                           \
 	(LDBL_MANT_DIG == 64 && LDBL_MAX_EXP == 16384) ||                      \
@@ -859,7 +860,7 @@ codec_takum64_from_s_and_l(bool s, long double l)
 		254.999999999999999777955395074968691915273666381835938L;
 
 	if (isnan(l) || (isinf(l) && l > 0)) {
-		return TAKUM64_NAR;
+		return TAKUM_LOG64_NAR;
 	} else if (isinf(l) && l < 0) {
 		return 0;
 	}
@@ -901,10 +902,10 @@ codec_takum64_from_s_and_l(bool s, long double l)
 	       (uint64_t)M;
 #else
 #pragma message                                                                \
-	"Unimplemented extended float format, takum64 encoding is stubbed"
+	"Unimplemented extended float format, takum_log64 encoding is stubbed"
 	(void)s;
 	(void)l;
 
-	return TAKUM64_NAR;
+	return TAKUM_LOG64_NAR;
 #endif
 }

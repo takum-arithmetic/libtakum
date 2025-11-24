@@ -5,9 +5,9 @@ This ISO C99 library is a reference implementation of
 precision machine number format.
 
 Eight data types are defined, namely `takum8`, `takum16`, `takum32`,
-`takum64` for the (logarithmic) takums, a logarithmic number system,
-and `takum_linear8`,`takum_linear16`,`takum_linear32` and
-`takum_linear64` for the linear takums, a floating-point format.
+`takum64` for the (floating-point) takums and `takum_log8`,
+`takum_log16`, `takum_log32` and `takum_log64` for the
+logarithmic takums, a logarithmic number system.
 
 A wide range of functions is implemented, including a full set of
 trigonometric functions and a selection of constants. Please refer to
@@ -46,7 +46,7 @@ documented.
 ```sh
 man libtakum
 man takum16_from_float64
-man takum_linear32_csch
+man takum_log32_csch
 ```
 
 The library also comes with examples. One example is a full-fledged

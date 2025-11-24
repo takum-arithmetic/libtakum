@@ -23,10 +23,10 @@ static const struct unit_test_block absolute_utb = {
 		.takum16_function   = takum16_absolute,
 		.takum32_function   = takum32_absolute,
 		.takum64_function   = takum64_absolute,
-		.takum_linear8_function    = takum_linear8_absolute,
-		.takum_linear16_function   = takum_linear16_absolute,
-		.takum_linear32_function   = takum_linear32_absolute,
-		.takum_linear64_function   = takum_linear64_absolute,
+		.takum_log8_function    = takum_log8_absolute,
+		.takum_log16_function   = takum_log16_absolute,
+		.takum_log32_function   = takum_log32_absolute,
+		.takum_log64_function   = takum_log64_absolute,
 	},
 };
 

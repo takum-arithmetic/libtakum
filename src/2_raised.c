@@ -9,8 +9,8 @@
 	(((res) == 0.0) ? DBL_MIN : isinf(res) ? DBL_MAX : (res))
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(2_raised, exp2, TWO_RAISED_RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(2_raised, exp2,
-                                      TWO_RAISED_RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(2_raised, exp2,
+                                   TWO_RAISED_RESULT_FIXER_MACRO)
 
 /*
  * This implementation is a bit of a hack by extending the arguments to long
@@ -35,5 +35,5 @@ two_raised_minus_1l(long double f)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(2_raised_minus_1, two_raised_minus_1,
                                TWO_RAISED_MINUS_ONE_RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(2_raised_minus_1, two_raised_minus_1,
-                                      TWO_RAISED_MINUS_ONE_RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(2_raised_minus_1, two_raised_minus_1,
+                                   TWO_RAISED_MINUS_ONE_RESULT_FIXER_MACRO)

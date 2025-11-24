@@ -24,7 +24,7 @@ sec(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(sec, sec, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(sec, sec, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(sec, sec, RESULT_FIXER_MACRO)
 
 static long double
 sec_pi_timesl(long double f)
@@ -53,5 +53,5 @@ sec_pi_times(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(sec_pi_times, sec_pi_times, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(sec_pi_times, sec_pi_times,
-                                      RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(sec_pi_times, sec_pi_times,
+                                   RESULT_FIXER_MACRO)

@@ -15,10 +15,10 @@ enum takum_type {
 	TAKUM_TYPE_TAKUM16,
 	TAKUM_TYPE_TAKUM32,
 	TAKUM_TYPE_TAKUM64,
-	TAKUM_TYPE_TAKUM_LINEAR8,
-	TAKUM_TYPE_TAKUM_LINEAR16,
-	TAKUM_TYPE_TAKUM_LINEAR32,
-	TAKUM_TYPE_TAKUM_LINEAR64,
+	TAKUM_TYPE_TAKUM_LOG8,
+	TAKUM_TYPE_TAKUM_LOG16,
+	TAKUM_TYPE_TAKUM_LOG32,
+	TAKUM_TYPE_TAKUM_LOG64,
 };
 
 struct number {
@@ -27,10 +27,10 @@ struct number {
 	takum16 takum16_value;
 	takum32 takum32_value;
 	takum64 takum64_value;
-	takum_linear8 takum_linear8_value;
-	takum_linear16 takum_linear16_value;
-	takum_linear32 takum_linear32_value;
-	takum_linear64 takum_linear64_value;
+	takum_log8 takum_log8_value;
+	takum_log16 takum_log16_value;
+	takum_log32 takum_log32_value;
+	takum_log64 takum_log64_value;
 	int64_t integer_value;
 };
 
@@ -103,14 +103,14 @@ number_from_string(const char *token, enum takum_type takum_type,
 			takum32_from_takum8(number->takum8_value);
 		number->takum64_value =
 			takum64_from_takum8(number->takum8_value);
-		number->takum_linear8_value =
-			takum_linear8_from_takum8(number->takum8_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum8(number->takum8_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum8(number->takum8_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum8(number->takum8_value);
+		number->takum_log8_value =
+			takum_log8_from_takum8(number->takum8_value);
+		number->takum_log16_value =
+			takum_log16_from_takum8(number->takum8_value);
+		number->takum_log32_value =
+			takum_log32_from_takum8(number->takum8_value);
+		number->takum_log64_value =
+			takum_log64_from_takum8(number->takum8_value);
 
 		break;
 	case TAKUM_TYPE_TAKUM16:
@@ -123,14 +123,14 @@ number_from_string(const char *token, enum takum_type takum_type,
 			takum32_from_takum16(number->takum16_value);
 		number->takum64_value =
 			takum64_from_takum16(number->takum16_value);
-		number->takum_linear8_value =
-			takum_linear8_from_takum16(number->takum16_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum16(number->takum16_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum16(number->takum16_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum16(number->takum16_value);
+		number->takum_log8_value =
+			takum_log8_from_takum16(number->takum16_value);
+		number->takum_log16_value =
+			takum_log16_from_takum16(number->takum16_value);
+		number->takum_log32_value =
+			takum_log32_from_takum16(number->takum16_value);
+		number->takum_log64_value =
+			takum_log64_from_takum16(number->takum16_value);
 
 		break;
 	case TAKUM_TYPE_TAKUM32:
@@ -143,14 +143,14 @@ number_from_string(const char *token, enum takum_type takum_type,
 			takum16_from_takum32(number->takum32_value);
 		number->takum64_value =
 			takum64_from_takum32(number->takum32_value);
-		number->takum_linear8_value =
-			takum_linear8_from_takum32(number->takum32_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum32(number->takum32_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum32(number->takum32_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum32(number->takum32_value);
+		number->takum_log8_value =
+			takum_log8_from_takum32(number->takum32_value);
+		number->takum_log16_value =
+			takum_log16_from_takum32(number->takum32_value);
+		number->takum_log32_value =
+			takum_log32_from_takum32(number->takum32_value);
+		number->takum_log64_value =
+			takum_log64_from_takum32(number->takum32_value);
 
 		break;
 	case TAKUM_TYPE_TAKUM64:
@@ -163,103 +163,94 @@ number_from_string(const char *token, enum takum_type takum_type,
 			takum16_from_takum64(number->takum64_value);
 		number->takum32_value =
 			takum32_from_takum64(number->takum64_value);
-		number->takum_linear8_value =
-			takum_linear8_from_takum64(number->takum64_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum64(number->takum64_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum64(number->takum64_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum64(number->takum64_value);
+		number->takum_log8_value =
+			takum_log8_from_takum64(number->takum64_value);
+		number->takum_log16_value =
+			takum_log16_from_takum64(number->takum64_value);
+		number->takum_log32_value =
+			takum_log32_from_takum64(number->takum64_value);
+		number->takum_log64_value =
+			takum_log64_from_takum64(number->takum64_value);
 
 		break;
-	case TAKUM_TYPE_TAKUM_LINEAR8:
-		number->takum_linear8_value =
-			takum_linear8_from_extended_float(float_value);
+	case TAKUM_TYPE_TAKUM_LOG8:
+		number->takum_log8_value =
+			takum_log8_from_extended_float(float_value);
 
 		number->takum8_value =
-			takum8_from_takum_linear8(number->takum_linear8_value);
+			takum8_from_takum_log8(number->takum_log8_value);
 		number->takum16_value =
-			takum16_from_takum_linear8(number->takum_linear8_value);
+			takum16_from_takum_log8(number->takum_log8_value);
 		number->takum32_value =
-			takum32_from_takum_linear8(number->takum_linear8_value);
+			takum32_from_takum_log8(number->takum_log8_value);
 		number->takum64_value =
-			takum64_from_takum_linear8(number->takum_linear8_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum_linear8(
-				number->takum_linear8_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum_linear8(
-				number->takum_linear8_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum_linear8(
-				number->takum_linear8_value);
+			takum64_from_takum_log8(number->takum_log8_value);
+		number->takum_log16_value =
+			takum_log16_from_takum_log8(number->takum_log8_value);
+		number->takum_log32_value =
+			takum_log32_from_takum_log8(number->takum_log8_value);
+		number->takum_log64_value =
+			takum_log64_from_takum_log8(number->takum_log8_value);
 
 		break;
-	case TAKUM_TYPE_TAKUM_LINEAR16:
-		number->takum_linear16_value =
-			takum_linear16_from_extended_float(float_value);
+	case TAKUM_TYPE_TAKUM_LOG16:
+		number->takum_log16_value =
+			takum_log16_from_extended_float(float_value);
 
-		number->takum8_value = takum8_from_takum_linear16(
-			number->takum_linear16_value);
-		number->takum16_value = takum16_from_takum_linear16(
-			number->takum_linear16_value);
-		number->takum32_value = takum32_from_takum_linear16(
-			number->takum_linear16_value);
-		number->takum64_value = takum64_from_takum_linear16(
-			number->takum_linear16_value);
-		number->takum_linear8_value = takum_linear8_from_takum_linear16(
-			number->takum_linear16_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum_linear16(
-				number->takum_linear16_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum_linear16(
-				number->takum_linear16_value);
+		number->takum8_value =
+			takum8_from_takum_log16(number->takum_log16_value);
+		number->takum16_value =
+			takum16_from_takum_log16(number->takum_log16_value);
+		number->takum32_value =
+			takum32_from_takum_log16(number->takum_log16_value);
+		number->takum64_value =
+			takum64_from_takum_log16(number->takum_log16_value);
+		number->takum_log8_value =
+			takum_log8_from_takum_log16(number->takum_log16_value);
+		number->takum_log32_value =
+			takum_log32_from_takum_log16(number->takum_log16_value);
+		number->takum_log64_value =
+			takum_log64_from_takum_log16(number->takum_log16_value);
 
 		break;
-	case TAKUM_TYPE_TAKUM_LINEAR32:
-		number->takum_linear32_value =
-			takum_linear32_from_extended_float(float_value);
+	case TAKUM_TYPE_TAKUM_LOG32:
+		number->takum_log32_value =
+			takum_log32_from_extended_float(float_value);
 
-		number->takum8_value = takum8_from_takum_linear32(
-			number->takum_linear32_value);
-		number->takum16_value = takum16_from_takum_linear32(
-			number->takum_linear32_value);
-		number->takum32_value = takum32_from_takum_linear32(
-			number->takum_linear32_value);
-		number->takum64_value = takum64_from_takum_linear32(
-			number->takum_linear32_value);
-		number->takum_linear8_value = takum_linear8_from_takum_linear32(
-			number->takum_linear32_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum_linear32(
-				number->takum_linear32_value);
-		number->takum_linear64_value =
-			takum_linear64_from_takum_linear32(
-				number->takum_linear32_value);
+		number->takum8_value =
+			takum8_from_takum_log32(number->takum_log32_value);
+		number->takum16_value =
+			takum16_from_takum_log32(number->takum_log32_value);
+		number->takum32_value =
+			takum32_from_takum_log32(number->takum_log32_value);
+		number->takum64_value =
+			takum64_from_takum_log32(number->takum_log32_value);
+		number->takum_log8_value =
+			takum_log8_from_takum_log32(number->takum_log32_value);
+		number->takum_log16_value =
+			takum_log16_from_takum_log32(number->takum_log32_value);
+		number->takum_log64_value =
+			takum_log64_from_takum_log32(number->takum_log32_value);
 
 		break;
-	case TAKUM_TYPE_TAKUM_LINEAR64:
-		number->takum_linear64_value =
-			takum_linear64_from_extended_float(float_value);
+	case TAKUM_TYPE_TAKUM_LOG64:
+		number->takum_log64_value =
+			takum_log64_from_extended_float(float_value);
 
-		number->takum8_value = takum8_from_takum_linear64(
-			number->takum_linear64_value);
-		number->takum16_value = takum16_from_takum_linear64(
-			number->takum_linear64_value);
-		number->takum32_value = takum32_from_takum_linear64(
-			number->takum_linear64_value);
-		number->takum64_value = takum64_from_takum_linear64(
-			number->takum_linear64_value);
-		number->takum_linear8_value = takum_linear8_from_takum_linear64(
-			number->takum_linear64_value);
-		number->takum_linear16_value =
-			takum_linear16_from_takum_linear64(
-				number->takum_linear64_value);
-		number->takum_linear32_value =
-			takum_linear32_from_takum_linear64(
-				number->takum_linear64_value);
+		number->takum8_value =
+			takum8_from_takum_log64(number->takum_log64_value);
+		number->takum16_value =
+			takum16_from_takum_log64(number->takum_log64_value);
+		number->takum32_value =
+			takum32_from_takum_log64(number->takum_log64_value);
+		number->takum64_value =
+			takum64_from_takum_log64(number->takum_log64_value);
+		number->takum_log8_value =
+			takum_log8_from_takum_log64(number->takum_log64_value);
+		number->takum_log16_value =
+			takum_log16_from_takum_log64(number->takum_log64_value);
+		number->takum_log32_value =
+			takum_log32_from_takum_log64(number->takum_log64_value);
 
 		break;
 	}
@@ -289,14 +280,13 @@ number_from_takum8(takum8 t, struct number *number)
 	number->takum16_value = takum16_from_takum8(number->takum8_value);
 	number->takum32_value = takum32_from_takum8(number->takum8_value);
 	number->takum64_value = takum64_from_takum8(number->takum8_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum8(number->takum8_value);
-	number->takum_linear16_value =
-		takum_linear16_from_takum8(number->takum8_value);
-	number->takum_linear32_value =
-		takum_linear32_from_takum8(number->takum8_value);
-	number->takum_linear64_value =
-		takum_linear64_from_takum8(number->takum8_value);
+	number->takum_log8_value = takum_log8_from_takum8(number->takum8_value);
+	number->takum_log16_value =
+		takum_log16_from_takum8(number->takum8_value);
+	number->takum_log32_value =
+		takum_log32_from_takum8(number->takum8_value);
+	number->takum_log64_value =
+		takum_log64_from_takum8(number->takum8_value);
 }
 
 static void
@@ -319,14 +309,14 @@ number_from_takum16(takum16 t, struct number *number)
 	number->takum8_value = takum8_from_takum16(number->takum16_value);
 	number->takum32_value = takum32_from_takum16(number->takum16_value);
 	number->takum64_value = takum64_from_takum16(number->takum16_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum16(number->takum16_value);
-	number->takum_linear16_value =
-		takum_linear16_from_takum16(number->takum16_value);
-	number->takum_linear32_value =
-		takum_linear32_from_takum16(number->takum16_value);
-	number->takum_linear64_value =
-		takum_linear64_from_takum16(number->takum16_value);
+	number->takum_log8_value =
+		takum_log8_from_takum16(number->takum16_value);
+	number->takum_log16_value =
+		takum_log16_from_takum16(number->takum16_value);
+	number->takum_log32_value =
+		takum_log32_from_takum16(number->takum16_value);
+	number->takum_log64_value =
+		takum_log64_from_takum16(number->takum16_value);
 }
 
 static void
@@ -349,14 +339,14 @@ number_from_takum32(takum32 t, struct number *number)
 	number->takum8_value = takum8_from_takum32(number->takum32_value);
 	number->takum16_value = takum16_from_takum32(number->takum32_value);
 	number->takum64_value = takum64_from_takum32(number->takum32_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum32(number->takum32_value);
-	number->takum_linear16_value =
-		takum_linear16_from_takum32(number->takum32_value);
-	number->takum_linear32_value =
-		takum_linear32_from_takum32(number->takum32_value);
-	number->takum_linear64_value =
-		takum_linear64_from_takum32(number->takum32_value);
+	number->takum_log8_value =
+		takum_log8_from_takum32(number->takum32_value);
+	number->takum_log16_value =
+		takum_log16_from_takum32(number->takum32_value);
+	number->takum_log32_value =
+		takum_log32_from_takum32(number->takum32_value);
+	number->takum_log64_value =
+		takum_log64_from_takum32(number->takum32_value);
 }
 
 static void
@@ -379,25 +369,56 @@ number_from_takum64(takum64 t, struct number *number)
 	number->takum8_value = takum8_from_takum64(number->takum64_value);
 	number->takum16_value = takum16_from_takum64(number->takum64_value);
 	number->takum32_value = takum32_from_takum64(number->takum64_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum64(number->takum64_value);
-	number->takum_linear16_value =
-		takum_linear16_from_takum64(number->takum64_value);
-	number->takum_linear32_value =
-		takum_linear32_from_takum64(number->takum64_value);
-	number->takum_linear64_value =
-		takum_linear64_from_takum64(number->takum64_value);
+	number->takum_log8_value =
+		takum_log8_from_takum64(number->takum64_value);
+	number->takum_log16_value =
+		takum_log16_from_takum64(number->takum64_value);
+	number->takum_log32_value =
+		takum_log32_from_takum64(number->takum64_value);
+	number->takum_log64_value =
+		takum_log64_from_takum64(number->takum64_value);
 }
 
 static void
-number_from_takum_linear8(takum_linear8 t, struct number *number)
+number_from_takum_log8(takum_log8 t, struct number *number)
 {
 	double float_value;
 
-	number->takum_type = TAKUM_TYPE_TAKUM_LINEAR8;
-	number->takum_linear8_value = t;
+	number->takum_type = TAKUM_TYPE_TAKUM_LOG8;
+	number->takum_log8_value = t;
 
-	float_value = takum_linear8_to_float64(t);
+	float_value = takum_log8_to_float64(t);
+	if (float_value == (int64_t)float_value) {
+		number->integer_value = (int64_t)float_value;
+	} else {
+		number->integer_value = INT64_MAX;
+	}
+
+	/* fill up the other types */
+	number->takum8_value = takum8_from_takum_log8(number->takum_log8_value);
+	number->takum16_value =
+		takum16_from_takum_log8(number->takum_log8_value);
+	number->takum32_value =
+		takum32_from_takum_log8(number->takum_log8_value);
+	number->takum64_value =
+		takum64_from_takum_log8(number->takum_log8_value);
+	number->takum_log16_value =
+		takum_log16_from_takum_log8(number->takum_log8_value);
+	number->takum_log32_value =
+		takum_log32_from_takum_log8(number->takum_log8_value);
+	number->takum_log64_value =
+		takum_log64_from_takum_log8(number->takum_log8_value);
+}
+
+static void
+number_from_takum_log16(takum_log16 t, struct number *number)
+{
+	double float_value;
+
+	number->takum_type = TAKUM_TYPE_TAKUM_LOG16;
+	number->takum_log16_value = t;
+
+	float_value = takum_log16_to_float64(t);
 	if (float_value == (int64_t)float_value) {
 		number->integer_value = (int64_t)float_value;
 	} else {
@@ -406,30 +427,30 @@ number_from_takum_linear8(takum_linear8 t, struct number *number)
 
 	/* fill up the other types */
 	number->takum8_value =
-		takum8_from_takum_linear8(number->takum_linear8_value);
+		takum8_from_takum_log16(number->takum_log16_value);
 	number->takum16_value =
-		takum16_from_takum_linear8(number->takum_linear8_value);
+		takum16_from_takum_log16(number->takum_log16_value);
 	number->takum32_value =
-		takum32_from_takum_linear8(number->takum_linear8_value);
+		takum32_from_takum_log16(number->takum_log16_value);
 	number->takum64_value =
-		takum64_from_takum_linear8(number->takum_linear8_value);
-	number->takum_linear16_value =
-		takum_linear16_from_takum_linear8(number->takum_linear8_value);
-	number->takum_linear32_value =
-		takum_linear32_from_takum_linear8(number->takum_linear8_value);
-	number->takum_linear64_value =
-		takum_linear64_from_takum_linear8(number->takum_linear8_value);
+		takum64_from_takum_log16(number->takum_log16_value);
+	number->takum_log8_value =
+		takum_log8_from_takum_log16(number->takum_log16_value);
+	number->takum_log32_value =
+		takum_log32_from_takum_log16(number->takum_log16_value);
+	number->takum_log64_value =
+		takum_log64_from_takum_log16(number->takum_log16_value);
 }
 
 static void
-number_from_takum_linear16(takum_linear16 t, struct number *number)
+number_from_takum_log32(takum_log32 t, struct number *number)
 {
 	double float_value;
 
-	number->takum_type = TAKUM_TYPE_TAKUM_LINEAR16;
-	number->takum_linear16_value = t;
+	number->takum_type = TAKUM_TYPE_TAKUM_LOG32;
+	number->takum_log32_value = t;
 
-	float_value = takum_linear16_to_float64(t);
+	float_value = takum_log32_to_float64(t);
 	if (float_value == (int64_t)float_value) {
 		number->integer_value = (int64_t)float_value;
 	} else {
@@ -438,62 +459,30 @@ number_from_takum_linear16(takum_linear16 t, struct number *number)
 
 	/* fill up the other types */
 	number->takum8_value =
-		takum8_from_takum_linear16(number->takum_linear16_value);
+		takum8_from_takum_log32(number->takum_log32_value);
 	number->takum16_value =
-		takum16_from_takum_linear16(number->takum_linear16_value);
+		takum16_from_takum_log32(number->takum_log32_value);
 	number->takum32_value =
-		takum32_from_takum_linear16(number->takum_linear16_value);
+		takum32_from_takum_log32(number->takum_log32_value);
 	number->takum64_value =
-		takum64_from_takum_linear16(number->takum_linear16_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum_linear16(number->takum_linear16_value);
-	number->takum_linear32_value = takum_linear32_from_takum_linear16(
-		number->takum_linear16_value);
-	number->takum_linear64_value = takum_linear64_from_takum_linear16(
-		number->takum_linear16_value);
+		takum64_from_takum_log32(number->takum_log32_value);
+	number->takum_log8_value =
+		takum_log8_from_takum_log32(number->takum_log32_value);
+	number->takum_log16_value =
+		takum_log16_from_takum_log32(number->takum_log32_value);
+	number->takum_log64_value =
+		takum_log64_from_takum_log32(number->takum_log32_value);
 }
 
 static void
-number_from_takum_linear32(takum_linear32 t, struct number *number)
-{
-	double float_value;
-
-	number->takum_type = TAKUM_TYPE_TAKUM_LINEAR32;
-	number->takum_linear32_value = t;
-
-	float_value = takum_linear32_to_float64(t);
-	if (float_value == (int64_t)float_value) {
-		number->integer_value = (int64_t)float_value;
-	} else {
-		number->integer_value = INT64_MAX;
-	}
-
-	/* fill up the other types */
-	number->takum8_value =
-		takum8_from_takum_linear32(number->takum_linear32_value);
-	number->takum16_value =
-		takum16_from_takum_linear32(number->takum_linear32_value);
-	number->takum32_value =
-		takum32_from_takum_linear32(number->takum_linear32_value);
-	number->takum64_value =
-		takum64_from_takum_linear32(number->takum_linear32_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum_linear32(number->takum_linear32_value);
-	number->takum_linear16_value = takum_linear16_from_takum_linear32(
-		number->takum_linear32_value);
-	number->takum_linear64_value = takum_linear64_from_takum_linear32(
-		number->takum_linear32_value);
-}
-
-static void
-number_from_takum_linear64(takum_linear64 t, struct number *number)
+number_from_takum_log64(takum_log64 t, struct number *number)
 {
 	long double float_value;
 
-	number->takum_type = TAKUM_TYPE_TAKUM_LINEAR64;
-	number->takum_linear64_value = t;
+	number->takum_type = TAKUM_TYPE_TAKUM_LOG64;
+	number->takum_log64_value = t;
 
-	float_value = takum_linear64_to_extended_float(t);
+	float_value = takum_log64_to_extended_float(t);
 	if (float_value == (int64_t)float_value) {
 		number->integer_value = (int64_t)float_value;
 	} else {
@@ -502,19 +491,19 @@ number_from_takum_linear64(takum_linear64 t, struct number *number)
 
 	/* fill up the other types */
 	number->takum8_value =
-		takum8_from_takum_linear64(number->takum_linear64_value);
+		takum8_from_takum_log64(number->takum_log64_value);
 	number->takum16_value =
-		takum16_from_takum_linear64(number->takum_linear64_value);
+		takum16_from_takum_log64(number->takum_log64_value);
 	number->takum32_value =
-		takum32_from_takum_linear64(number->takum_linear64_value);
+		takum32_from_takum_log64(number->takum_log64_value);
 	number->takum64_value =
-		takum64_from_takum_linear64(number->takum_linear64_value);
-	number->takum_linear8_value =
-		takum_linear8_from_takum_linear64(number->takum_linear64_value);
-	number->takum_linear16_value = takum_linear16_from_takum_linear64(
-		number->takum_linear64_value);
-	number->takum_linear32_value = takum_linear32_from_takum_linear64(
-		number->takum_linear64_value);
+		takum64_from_takum_log64(number->takum_log64_value);
+	number->takum_log8_value =
+		takum_log8_from_takum_log64(number->takum_log64_value);
+	number->takum_log16_value =
+		takum_log16_from_takum_log64(number->takum_log64_value);
+	number->takum_log32_value =
+		takum_log32_from_takum_log64(number->takum_log64_value);
 }
 
 static void
@@ -543,21 +532,21 @@ number_print(const struct number *number)
 			float_value = takum64_to_extended_float(
 				number->takum64_value);
 			break;
-		case TAKUM_TYPE_TAKUM_LINEAR8:
-			float_value = takum_linear8_to_extended_float(
-				number->takum_linear8_value);
+		case TAKUM_TYPE_TAKUM_LOG8:
+			float_value = takum_log8_to_extended_float(
+				number->takum_log8_value);
 			break;
-		case TAKUM_TYPE_TAKUM_LINEAR16:
-			float_value = takum_linear16_to_extended_float(
-				number->takum_linear16_value);
+		case TAKUM_TYPE_TAKUM_LOG16:
+			float_value = takum_log16_to_extended_float(
+				number->takum_log16_value);
 			break;
-		case TAKUM_TYPE_TAKUM_LINEAR32:
-			float_value = takum_linear32_to_extended_float(
-				number->takum_linear32_value);
+		case TAKUM_TYPE_TAKUM_LOG32:
+			float_value = takum_log32_to_extended_float(
+				number->takum_log32_value);
 			break;
-		case TAKUM_TYPE_TAKUM_LINEAR64:
-			float_value = takum_linear64_to_extended_float(
-				number->takum_linear64_value);
+		case TAKUM_TYPE_TAKUM_LOG64:
+			float_value = takum_log64_to_extended_float(
+				number->takum_log64_value);
 			break;
 		}
 
@@ -649,14 +638,13 @@ static const struct {
 			takum16 (*takum16_function)(takum16, int64_t);
 			takum32 (*takum32_function)(takum32, int64_t);
 			takum64 (*takum64_function)(takum64, int64_t);
-			takum_linear8 (*takum_linear8_function)(takum_linear8,
-			                                        int64_t);
-			takum_linear16 (*takum_linear16_function)(
-				takum_linear16, int64_t);
-			takum_linear32 (*takum_linear32_function)(
-				takum_linear32, int64_t);
-			takum_linear64 (*takum_linear64_function)(
-				takum_linear64, int64_t);
+			takum_log8 (*takum_log8_function)(takum_log8, int64_t);
+			takum_log16 (*takum_log16_function)(takum_log16,
+			                                    int64_t);
+			takum_log32 (*takum_log32_function)(takum_log32,
+			                                    int64_t);
+			takum_log64 (*takum_log64_function)(takum_log64,
+			                                    int64_t);
 		} takum_int64_takum;
 
 		struct {
@@ -664,13 +652,10 @@ static const struct {
 			takum16 (*takum16_function)(takum16);
 			takum32 (*takum32_function)(takum32);
 			takum64 (*takum64_function)(takum64);
-			takum_linear8 (*takum_linear8_function)(takum_linear8);
-			takum_linear16 (*takum_linear16_function)(
-				takum_linear16);
-			takum_linear32 (*takum_linear32_function)(
-				takum_linear32);
-			takum_linear64 (*takum_linear64_function)(
-				takum_linear64);
+			takum_log8 (*takum_log8_function)(takum_log8);
+			takum_log16 (*takum_log16_function)(takum_log16);
+			takum_log32 (*takum_log32_function)(takum_log32);
+			takum_log64 (*takum_log64_function)(takum_log64);
 		} takum_takum;
 
 		struct {
@@ -678,14 +663,14 @@ static const struct {
 			takum16 (*takum16_function)(takum16, takum16);
 			takum32 (*takum32_function)(takum32, takum32);
 			takum64 (*takum64_function)(takum64, takum64);
-			takum_linear8 (*takum_linear8_function)(takum_linear8,
-			                                        takum_linear8);
-			takum_linear16 (*takum_linear16_function)(
-				takum_linear16, takum_linear16);
-			takum_linear32 (*takum_linear32_function)(
-				takum_linear32, takum_linear32);
-			takum_linear64 (*takum_linear64_function)(
-				takum_linear64, takum_linear64);
+			takum_log8 (*takum_log8_function)(takum_log8,
+			                                  takum_log8);
+			takum_log16 (*takum_log16_function)(takum_log16,
+			                                    takum_log16);
+			takum_log32 (*takum_log32_function)(takum_log32,
+			                                    takum_log32);
+			takum_log64 (*takum_log64_function)(takum_log64,
+			                                    takum_log64);
 		} takum_takum_takum;
 	} implementation;
 } operators[] = {
@@ -701,10 +686,10 @@ static const struct {
 			.takum16_function = takum16_addition,
 			.takum32_function = takum32_addition,
 			.takum64_function = takum64_addition,
-			.takum_linear8_function = takum_linear8_addition,
-			.takum_linear16_function = takum_linear16_addition,
-			.takum_linear32_function = takum_linear32_addition,
-			.takum_linear64_function = takum_linear64_addition,
+			.takum_log8_function = takum_log8_addition,
+			.takum_log16_function = takum_log16_addition,
+			.takum_log32_function = takum_log32_addition,
+			.takum_log64_function = takum_log64_addition,
 		},
 	},
 	{
@@ -715,10 +700,10 @@ static const struct {
 			.takum16_function = takum16_subtraction,
 			.takum32_function = takum32_subtraction,
 			.takum64_function = takum64_subtraction,
-			.takum_linear8_function = takum_linear8_subtraction,
-			.takum_linear16_function = takum_linear16_subtraction,
-			.takum_linear32_function = takum_linear32_subtraction,
-			.takum_linear64_function = takum_linear64_subtraction,
+			.takum_log8_function = takum_log8_subtraction,
+			.takum_log16_function = takum_log16_subtraction,
+			.takum_log32_function = takum_log32_subtraction,
+			.takum_log64_function = takum_log64_subtraction,
 		},
 	},
 	{
@@ -729,10 +714,10 @@ static const struct {
 			.takum16_function = takum16_multiplication,
 			.takum32_function = takum32_multiplication,
 			.takum64_function = takum64_multiplication,
-			.takum_linear8_function = takum_linear8_multiplication,
-			.takum_linear16_function = takum_linear16_multiplication,
-			.takum_linear32_function = takum_linear32_multiplication,
-			.takum_linear64_function = takum_linear64_multiplication,
+			.takum_log8_function = takum_log8_multiplication,
+			.takum_log16_function = takum_log16_multiplication,
+			.takum_log32_function = takum_log32_multiplication,
+			.takum_log64_function = takum_log64_multiplication,
 		},
 	},
 	{
@@ -743,10 +728,10 @@ static const struct {
 			.takum16_function = takum16_division,
 			.takum32_function = takum32_division,
 			.takum64_function = takum64_division,
-			.takum_linear8_function = takum_linear8_division,
-			.takum_linear16_function = takum_linear16_division,
-			.takum_linear32_function = takum_linear32_division,
-			.takum_linear64_function = takum_linear64_division,
+			.takum_log8_function = takum_log8_division,
+			.takum_log16_function = takum_log16_division,
+			.takum_log32_function = takum_log32_division,
+			.takum_log64_function = takum_log64_division,
 		},
 	},
 	{
@@ -761,10 +746,10 @@ static const struct {
 			.takum16_function = takum16_absolute,
 			.takum32_function = takum32_absolute,
 			.takum64_function = takum64_absolute,
-			.takum_linear8_function = takum_linear8_absolute,
-			.takum_linear16_function = takum_linear16_absolute,
-			.takum_linear32_function = takum_linear32_absolute,
-			.takum_linear64_function = takum_linear64_absolute,
+			.takum_log8_function = takum_log8_absolute,
+			.takum_log16_function = takum_log16_absolute,
+			.takum_log32_function = takum_log32_absolute,
+			.takum_log64_function = takum_log64_absolute,
 		},
 	},
 	{
@@ -775,10 +760,10 @@ static const struct {
 			.takum16_function = takum16_arccos,
 			.takum32_function = takum32_arccos,
 			.takum64_function = takum64_arccos,
-			.takum_linear8_function = takum_linear8_arccos,
-			.takum_linear16_function = takum_linear16_arccos,
-			.takum_linear32_function = takum_linear32_arccos,
-			.takum_linear64_function = takum_linear64_arccos,
+			.takum_log8_function = takum_log8_arccos,
+			.takum_log16_function = takum_log16_arccos,
+			.takum_log32_function = takum_log32_arccos,
+			.takum_log64_function = takum_log64_arccos,
 		},
 	},
 	{
@@ -789,10 +774,10 @@ static const struct {
 			.takum16_function = takum16_arccos_over_pi,
 			.takum32_function = takum32_arccos_over_pi,
 			.takum64_function = takum64_arccos_over_pi,
-			.takum_linear8_function = takum_linear8_arccos_over_pi,
-			.takum_linear16_function = takum_linear16_arccos_over_pi,
-			.takum_linear32_function = takum_linear32_arccos_over_pi,
-			.takum_linear64_function = takum_linear64_arccos_over_pi,
+			.takum_log8_function = takum_log8_arccos_over_pi,
+			.takum_log16_function = takum_log16_arccos_over_pi,
+			.takum_log32_function = takum_log32_arccos_over_pi,
+			.takum_log64_function = takum_log64_arccos_over_pi,
 		},
 	},
 	{
@@ -803,10 +788,10 @@ static const struct {
 			.takum16_function = takum16_arccot,
 			.takum32_function = takum32_arccot,
 			.takum64_function = takum64_arccot,
-			.takum_linear8_function = takum_linear8_arccot,
-			.takum_linear16_function = takum_linear16_arccot,
-			.takum_linear32_function = takum_linear32_arccot,
-			.takum_linear64_function = takum_linear64_arccot,
+			.takum_log8_function = takum_log8_arccot,
+			.takum_log16_function = takum_log16_arccot,
+			.takum_log32_function = takum_log32_arccot,
+			.takum_log64_function = takum_log64_arccot,
 		},
 	},
 	{
@@ -817,10 +802,10 @@ static const struct {
 			.takum16_function = takum16_arccot_over_pi,
 			.takum32_function = takum32_arccot_over_pi,
 			.takum64_function = takum64_arccot_over_pi,
-			.takum_linear8_function = takum_linear8_arccot_over_pi,
-			.takum_linear16_function = takum_linear16_arccot_over_pi,
-			.takum_linear32_function = takum_linear32_arccot_over_pi,
-			.takum_linear64_function = takum_linear64_arccot_over_pi,
+			.takum_log8_function = takum_log8_arccot_over_pi,
+			.takum_log16_function = takum_log16_arccot_over_pi,
+			.takum_log32_function = takum_log32_arccot_over_pi,
+			.takum_log64_function = takum_log64_arccot_over_pi,
 		},
 	},
 	{
@@ -831,10 +816,10 @@ static const struct {
 			.takum16_function = takum16_arccsc,
 			.takum32_function = takum32_arccsc,
 			.takum64_function = takum64_arccsc,
-			.takum_linear8_function = takum_linear8_arccsc,
-			.takum_linear16_function = takum_linear16_arccsc,
-			.takum_linear32_function = takum_linear32_arccsc,
-			.takum_linear64_function = takum_linear64_arccsc,
+			.takum_log8_function = takum_log8_arccsc,
+			.takum_log16_function = takum_log16_arccsc,
+			.takum_log32_function = takum_log32_arccsc,
+			.takum_log64_function = takum_log64_arccsc,
 		},
 	},
 	{
@@ -845,10 +830,10 @@ static const struct {
 			.takum16_function = takum16_arccsc_over_pi,
 			.takum32_function = takum32_arccsc_over_pi,
 			.takum64_function = takum64_arccsc_over_pi,
-			.takum_linear8_function = takum_linear8_arccsc_over_pi,
-			.takum_linear16_function = takum_linear16_arccsc_over_pi,
-			.takum_linear32_function = takum_linear32_arccsc_over_pi,
-			.takum_linear64_function = takum_linear64_arccsc_over_pi,
+			.takum_log8_function = takum_log8_arccsc_over_pi,
+			.takum_log16_function = takum_log16_arccsc_over_pi,
+			.takum_log32_function = takum_log32_arccsc_over_pi,
+			.takum_log64_function = takum_log64_arccsc_over_pi,
 		},
 	},
 	{
@@ -859,10 +844,10 @@ static const struct {
 			.takum16_function = takum16_arcosh,
 			.takum32_function = takum32_arcosh,
 			.takum64_function = takum64_arcosh,
-			.takum_linear8_function = takum_linear8_arcosh,
-			.takum_linear16_function = takum_linear16_arcosh,
-			.takum_linear32_function = takum_linear32_arcosh,
-			.takum_linear64_function = takum_linear64_arcosh,
+			.takum_log8_function = takum_log8_arcosh,
+			.takum_log16_function = takum_log16_arcosh,
+			.takum_log32_function = takum_log32_arcosh,
+			.takum_log64_function = takum_log64_arcosh,
 		},
 	},
 	{
@@ -873,10 +858,10 @@ static const struct {
 			.takum16_function = takum16_arcoth,
 			.takum32_function = takum32_arcoth,
 			.takum64_function = takum64_arcoth,
-			.takum_linear8_function = takum_linear8_arcoth,
-			.takum_linear16_function = takum_linear16_arcoth,
-			.takum_linear32_function = takum_linear32_arcoth,
-			.takum_linear64_function = takum_linear64_arcoth,
+			.takum_log8_function = takum_log8_arcoth,
+			.takum_log16_function = takum_log16_arcoth,
+			.takum_log32_function = takum_log32_arcoth,
+			.takum_log64_function = takum_log64_arcoth,
 		},
 	},
 	{
@@ -887,10 +872,10 @@ static const struct {
 			.takum16_function = takum16_arcsch,
 			.takum32_function = takum32_arcsch,
 			.takum64_function = takum64_arcsch,
-			.takum_linear8_function = takum_linear8_arcsch,
-			.takum_linear16_function = takum_linear16_arcsch,
-			.takum_linear32_function = takum_linear32_arcsch,
-			.takum_linear64_function = takum_linear64_arcsch,
+			.takum_log8_function = takum_log8_arcsch,
+			.takum_log16_function = takum_log16_arcsch,
+			.takum_log32_function = takum_log32_arcsch,
+			.takum_log64_function = takum_log64_arcsch,
 		},
 	},
 	{
@@ -901,10 +886,10 @@ static const struct {
 			.takum16_function = takum16_arcsec,
 			.takum32_function = takum32_arcsec,
 			.takum64_function = takum64_arcsec,
-			.takum_linear8_function = takum_linear8_arcsec,
-			.takum_linear16_function = takum_linear16_arcsec,
-			.takum_linear32_function = takum_linear32_arcsec,
-			.takum_linear64_function = takum_linear64_arcsec,
+			.takum_log8_function = takum_log8_arcsec,
+			.takum_log16_function = takum_log16_arcsec,
+			.takum_log32_function = takum_log32_arcsec,
+			.takum_log64_function = takum_log64_arcsec,
 		},
 	},
 	{
@@ -915,10 +900,10 @@ static const struct {
 			.takum16_function = takum16_arcsec_over_pi,
 			.takum32_function = takum32_arcsec_over_pi,
 			.takum64_function = takum64_arcsec_over_pi,
-			.takum_linear8_function = takum_linear8_arcsec_over_pi,
-			.takum_linear16_function = takum_linear16_arcsec_over_pi,
-			.takum_linear32_function = takum_linear32_arcsec_over_pi,
-			.takum_linear64_function = takum_linear64_arcsec_over_pi,
+			.takum_log8_function = takum_log8_arcsec_over_pi,
+			.takum_log16_function = takum_log16_arcsec_over_pi,
+			.takum_log32_function = takum_log32_arcsec_over_pi,
+			.takum_log64_function = takum_log64_arcsec_over_pi,
 		},
 	},
 	{
@@ -929,10 +914,10 @@ static const struct {
 			.takum16_function = takum16_arcsin,
 			.takum32_function = takum32_arcsin,
 			.takum64_function = takum64_arcsin,
-			.takum_linear8_function = takum_linear8_arcsin,
-			.takum_linear16_function = takum_linear16_arcsin,
-			.takum_linear32_function = takum_linear32_arcsin,
-			.takum_linear64_function = takum_linear64_arcsin,
+			.takum_log8_function = takum_log8_arcsin,
+			.takum_log16_function = takum_log16_arcsin,
+			.takum_log32_function = takum_log32_arcsin,
+			.takum_log64_function = takum_log64_arcsin,
 		},
 	},
 	{
@@ -943,10 +928,10 @@ static const struct {
 			.takum16_function = takum16_arcsin_over_pi,
 			.takum32_function = takum32_arcsin_over_pi,
 			.takum64_function = takum64_arcsin_over_pi,
-			.takum_linear8_function = takum_linear8_arcsin_over_pi,
-			.takum_linear16_function = takum_linear16_arcsin_over_pi,
-			.takum_linear32_function = takum_linear32_arcsin_over_pi,
-			.takum_linear64_function = takum_linear64_arcsin_over_pi,
+			.takum_log8_function = takum_log8_arcsin_over_pi,
+			.takum_log16_function = takum_log16_arcsin_over_pi,
+			.takum_log32_function = takum_log32_arcsin_over_pi,
+			.takum_log64_function = takum_log64_arcsin_over_pi,
 		},
 	},
 	{
@@ -957,10 +942,10 @@ static const struct {
 			.takum16_function = takum16_arctan2,
 			.takum32_function = takum32_arctan2,
 			.takum64_function = takum64_arctan2,
-			.takum_linear8_function = takum_linear8_arctan2,
-			.takum_linear16_function = takum_linear16_arctan2,
-			.takum_linear32_function = takum_linear32_arctan2,
-			.takum_linear64_function = takum_linear64_arctan2,
+			.takum_log8_function = takum_log8_arctan2,
+			.takum_log16_function = takum_log16_arctan2,
+			.takum_log32_function = takum_log32_arctan2,
+			.takum_log64_function = takum_log64_arctan2,
 		}
 	},
 	{
@@ -971,10 +956,10 @@ static const struct {
 			.takum16_function = takum16_arctan2_over_pi,
 			.takum32_function = takum32_arctan2_over_pi,
 			.takum64_function = takum64_arctan2_over_pi,
-			.takum_linear8_function = takum_linear8_arctan2_over_pi,
-			.takum_linear16_function = takum_linear16_arctan2_over_pi,
-			.takum_linear32_function = takum_linear32_arctan2_over_pi,
-			.takum_linear64_function = takum_linear64_arctan2_over_pi,
+			.takum_log8_function = takum_log8_arctan2_over_pi,
+			.takum_log16_function = takum_log16_arctan2_over_pi,
+			.takum_log32_function = takum_log32_arctan2_over_pi,
+			.takum_log64_function = takum_log64_arctan2_over_pi,
 		},
 	},
 	{
@@ -985,10 +970,10 @@ static const struct {
 			.takum16_function = takum16_arctan,
 			.takum32_function = takum32_arctan,
 			.takum64_function = takum64_arctan,
-			.takum_linear8_function = takum_linear8_arctan,
-			.takum_linear16_function = takum_linear16_arctan,
-			.takum_linear32_function = takum_linear32_arctan,
-			.takum_linear64_function = takum_linear64_arctan,
+			.takum_log8_function = takum_log8_arctan,
+			.takum_log16_function = takum_log16_arctan,
+			.takum_log32_function = takum_log32_arctan,
+			.takum_log64_function = takum_log64_arctan,
 		},
 	},
 	{
@@ -999,10 +984,10 @@ static const struct {
 			.takum16_function = takum16_arctan_over_pi,
 			.takum32_function = takum32_arctan_over_pi,
 			.takum64_function = takum64_arctan_over_pi,
-			.takum_linear8_function = takum_linear8_arctan_over_pi,
-			.takum_linear16_function = takum_linear16_arctan_over_pi,
-			.takum_linear32_function = takum_linear32_arctan_over_pi,
-			.takum_linear64_function = takum_linear64_arctan_over_pi,
+			.takum_log8_function = takum_log8_arctan_over_pi,
+			.takum_log16_function = takum_log16_arctan_over_pi,
+			.takum_log32_function = takum_log32_arctan_over_pi,
+			.takum_log64_function = takum_log64_arctan_over_pi,
 		},
 	},
 	{
@@ -1013,10 +998,10 @@ static const struct {
 			.takum16_function = takum16_arsech,
 			.takum32_function = takum32_arsech,
 			.takum64_function = takum64_arsech,
-			.takum_linear8_function = takum_linear8_arsech,
-			.takum_linear16_function = takum_linear16_arsech,
-			.takum_linear32_function = takum_linear32_arsech,
-			.takum_linear64_function = takum_linear64_arsech,
+			.takum_log8_function = takum_log8_arsech,
+			.takum_log16_function = takum_log16_arsech,
+			.takum_log32_function = takum_log32_arsech,
+			.takum_log64_function = takum_log64_arsech,
 		},
 	},
 	{
@@ -1027,10 +1012,10 @@ static const struct {
 			.takum16_function = takum16_arsinh,
 			.takum32_function = takum32_arsinh,
 			.takum64_function = takum64_arsinh,
-			.takum_linear8_function = takum_linear8_arsinh,
-			.takum_linear16_function = takum_linear16_arsinh,
-			.takum_linear32_function = takum_linear32_arsinh,
-			.takum_linear64_function = takum_linear64_arsinh,
+			.takum_log8_function = takum_log8_arsinh,
+			.takum_log16_function = takum_log16_arsinh,
+			.takum_log32_function = takum_log32_arsinh,
+			.takum_log64_function = takum_log64_arsinh,
 		},
 	},
 	{
@@ -1041,10 +1026,10 @@ static const struct {
 			.takum16_function = takum16_artanh,
 			.takum32_function = takum32_artanh,
 			.takum64_function = takum64_artanh,
-			.takum_linear8_function = takum_linear8_artanh,
-			.takum_linear16_function = takum_linear16_artanh,
-			.takum_linear32_function = takum_linear32_artanh,
-			.takum_linear64_function = takum_linear64_artanh,
+			.takum_log8_function = takum_log8_artanh,
+			.takum_log16_function = takum_log16_artanh,
+			.takum_log32_function = takum_log32_artanh,
+			.takum_log64_function = takum_log64_artanh,
 		},
 	},
 	{
@@ -1055,10 +1040,10 @@ static const struct {
 			.takum16_function = takum16_cos,
 			.takum32_function = takum32_cos,
 			.takum64_function = takum64_cos,
-			.takum_linear8_function = takum_linear8_cos,
-			.takum_linear16_function = takum_linear16_cos,
-			.takum_linear32_function = takum_linear32_cos,
-			.takum_linear64_function = takum_linear64_cos,
+			.takum_log8_function = takum_log8_cos,
+			.takum_log16_function = takum_log16_cos,
+			.takum_log32_function = takum_log32_cos,
+			.takum_log64_function = takum_log64_cos,
 		},
 	},
 	{
@@ -1069,10 +1054,10 @@ static const struct {
 			.takum16_function = takum16_cos_pi_times,
 			.takum32_function = takum32_cos_pi_times,
 			.takum64_function = takum64_cos_pi_times,
-			.takum_linear8_function = takum_linear8_cos_pi_times,
-			.takum_linear16_function = takum_linear16_cos_pi_times,
-			.takum_linear32_function = takum_linear32_cos_pi_times,
-			.takum_linear64_function = takum_linear64_cos_pi_times,
+			.takum_log8_function = takum_log8_cos_pi_times,
+			.takum_log16_function = takum_log16_cos_pi_times,
+			.takum_log32_function = takum_log32_cos_pi_times,
+			.takum_log64_function = takum_log64_cos_pi_times,
 		},
 	},
 	{
@@ -1083,10 +1068,10 @@ static const struct {
 			.takum16_function = takum16_cosh,
 			.takum32_function = takum32_cosh,
 			.takum64_function = takum64_cosh,
-			.takum_linear8_function = takum_linear8_cosh,
-			.takum_linear16_function = takum_linear16_cosh,
-			.takum_linear32_function = takum_linear32_cosh,
-			.takum_linear64_function = takum_linear64_cosh,
+			.takum_log8_function = takum_log8_cosh,
+			.takum_log16_function = takum_log16_cosh,
+			.takum_log32_function = takum_log32_cosh,
+			.takum_log64_function = takum_log64_cosh,
 		},
 	},
 	{
@@ -1097,10 +1082,10 @@ static const struct {
 			.takum16_function = takum16_cot,
 			.takum32_function = takum32_cot,
 			.takum64_function = takum64_cot,
-			.takum_linear8_function = takum_linear8_cot,
-			.takum_linear16_function = takum_linear16_cot,
-			.takum_linear32_function = takum_linear32_cot,
-			.takum_linear64_function = takum_linear64_cot,
+			.takum_log8_function = takum_log8_cot,
+			.takum_log16_function = takum_log16_cot,
+			.takum_log32_function = takum_log32_cot,
+			.takum_log64_function = takum_log64_cot,
 		},
 	},
 	{
@@ -1111,10 +1096,10 @@ static const struct {
 			.takum16_function = takum16_cot_pi_times,
 			.takum32_function = takum32_cot_pi_times,
 			.takum64_function = takum64_cot_pi_times,
-			.takum_linear8_function = takum_linear8_cot_pi_times,
-			.takum_linear16_function = takum_linear16_cot_pi_times,
-			.takum_linear32_function = takum_linear32_cot_pi_times,
-			.takum_linear64_function = takum_linear64_cot_pi_times,
+			.takum_log8_function = takum_log8_cot_pi_times,
+			.takum_log16_function = takum_log16_cot_pi_times,
+			.takum_log32_function = takum_log32_cot_pi_times,
+			.takum_log64_function = takum_log64_cot_pi_times,
 		},
 	},
 	{
@@ -1125,10 +1110,10 @@ static const struct {
 			.takum16_function = takum16_coth,
 			.takum32_function = takum32_coth,
 			.takum64_function = takum64_coth,
-			.takum_linear8_function = takum_linear8_coth,
-			.takum_linear16_function = takum_linear16_coth,
-			.takum_linear32_function = takum_linear32_coth,
-			.takum_linear64_function = takum_linear64_coth,
+			.takum_log8_function = takum_log8_coth,
+			.takum_log16_function = takum_log16_coth,
+			.takum_log32_function = takum_log32_coth,
+			.takum_log64_function = takum_log64_coth,
 		},
 	},
 	{
@@ -1139,10 +1124,10 @@ static const struct {
 			.takum16_function = takum16_csc,
 			.takum32_function = takum32_csc,
 			.takum64_function = takum64_csc,
-			.takum_linear8_function = takum_linear8_csc,
-			.takum_linear16_function = takum_linear16_csc,
-			.takum_linear32_function = takum_linear32_csc,
-			.takum_linear64_function = takum_linear64_csc,
+			.takum_log8_function = takum_log8_csc,
+			.takum_log16_function = takum_log16_csc,
+			.takum_log32_function = takum_log32_csc,
+			.takum_log64_function = takum_log64_csc,
 		},
 	},
 	{
@@ -1153,10 +1138,10 @@ static const struct {
 			.takum16_function = takum16_csc_pi_times,
 			.takum32_function = takum32_csc_pi_times,
 			.takum64_function = takum64_csc_pi_times,
-			.takum_linear8_function = takum_linear8_csc_pi_times,
-			.takum_linear16_function = takum_linear16_csc_pi_times,
-			.takum_linear32_function = takum_linear32_csc_pi_times,
-			.takum_linear64_function = takum_linear64_csc_pi_times,
+			.takum_log8_function = takum_log8_csc_pi_times,
+			.takum_log16_function = takum_log16_csc_pi_times,
+			.takum_log32_function = takum_log32_csc_pi_times,
+			.takum_log64_function = takum_log64_csc_pi_times,
 		},
 	},
 	{
@@ -1167,10 +1152,10 @@ static const struct {
 			.takum16_function = takum16_csch,
 			.takum32_function = takum32_csch,
 			.takum64_function = takum64_csch,
-			.takum_linear8_function = takum_linear8_csch,
-			.takum_linear16_function = takum_linear16_csch,
-			.takum_linear32_function = takum_linear32_csch,
-			.takum_linear64_function = takum_linear64_csch,
+			.takum_log8_function = takum_log8_csch,
+			.takum_log16_function = takum_log16_csch,
+			.takum_log32_function = takum_log32_csch,
+			.takum_log64_function = takum_log64_csch,
 		},
 	},
 	{
@@ -1181,10 +1166,10 @@ static const struct {
 			.takum16_function = takum16_exp,
 			.takum32_function = takum32_exp,
 			.takum64_function = takum64_exp,
-			.takum_linear8_function = takum_linear8_exp,
-			.takum_linear16_function = takum_linear16_exp,
-			.takum_linear32_function = takum_linear32_exp,
-			.takum_linear64_function = takum_linear64_exp,
+			.takum_log8_function = takum_log8_exp,
+			.takum_log16_function = takum_log16_exp,
+			.takum_log32_function = takum_log32_exp,
+			.takum_log64_function = takum_log64_exp,
 		},
 	},
 	{
@@ -1195,10 +1180,10 @@ static const struct {
 			.takum16_function = takum16_exp_minus_1,
 			.takum32_function = takum32_exp_minus_1,
 			.takum64_function = takum64_exp_minus_1,
-			.takum_linear8_function = takum_linear8_exp_minus_1,
-			.takum_linear16_function = takum_linear16_exp_minus_1,
-			.takum_linear32_function = takum_linear32_exp_minus_1,
-			.takum_linear64_function = takum_linear64_exp_minus_1,
+			.takum_log8_function = takum_log8_exp_minus_1,
+			.takum_log16_function = takum_log16_exp_minus_1,
+			.takum_log32_function = takum_log32_exp_minus_1,
+			.takum_log64_function = takum_log64_exp_minus_1,
 		},
 	},
 	{
@@ -1209,10 +1194,10 @@ static const struct {
 			.takum16_function = takum16_hypotenuse,
 			.takum32_function = takum32_hypotenuse,
 			.takum64_function = takum64_hypotenuse,
-			.takum_linear8_function = takum_linear8_hypotenuse,
-			.takum_linear16_function = takum_linear16_hypotenuse,
-			.takum_linear32_function = takum_linear32_hypotenuse,
-			.takum_linear64_function = takum_linear64_hypotenuse,
+			.takum_log8_function = takum_log8_hypotenuse,
+			.takum_log16_function = takum_log16_hypotenuse,
+			.takum_log32_function = takum_log32_hypotenuse,
+			.takum_log64_function = takum_log64_hypotenuse,
 		},
 	},
 	{
@@ -1223,10 +1208,10 @@ static const struct {
 			.takum16_function = takum16_root,
 			.takum32_function = takum32_root,
 			.takum64_function = takum64_root,
-			.takum_linear8_function = takum_linear8_root,
-			.takum_linear16_function = takum_linear16_root,
-			.takum_linear32_function = takum_linear32_root,
-			.takum_linear64_function = takum_linear64_root,
+			.takum_log8_function = takum_log8_root,
+			.takum_log16_function = takum_log16_root,
+			.takum_log32_function = takum_log32_root,
+			.takum_log64_function = takum_log64_root,
 		},
 	},
 	{
@@ -1237,10 +1222,10 @@ static const struct {
 			.takum16_function = takum16_inversion,
 			.takum32_function = takum32_inversion,
 			.takum64_function = takum64_inversion,
-			.takum_linear8_function = takum_linear8_inversion,
-			.takum_linear16_function = takum_linear16_inversion,
-			.takum_linear32_function = takum_linear32_inversion,
-			.takum_linear64_function = takum_linear64_inversion,
+			.takum_log8_function = takum_log8_inversion,
+			.takum_log16_function = takum_log16_inversion,
+			.takum_log32_function = takum_log32_inversion,
+			.takum_log64_function = takum_log64_inversion,
 		},
 	},
 	{
@@ -1251,10 +1236,10 @@ static const struct {
 			.takum16_function = takum16_lb,
 			.takum32_function = takum32_lb,
 			.takum64_function = takum64_lb,
-			.takum_linear8_function = takum_linear8_lb,
-			.takum_linear16_function = takum_linear16_lb,
-			.takum_linear32_function = takum_linear32_lb,
-			.takum_linear64_function = takum_linear64_lb,
+			.takum_log8_function = takum_log8_lb,
+			.takum_log16_function = takum_log16_lb,
+			.takum_log32_function = takum_log32_lb,
+			.takum_log64_function = takum_log64_lb,
 		},
 	},
 	{
@@ -1265,10 +1250,10 @@ static const struct {
 			.takum16_function = takum16_lb_1_plus,
 			.takum32_function = takum32_lb_1_plus,
 			.takum64_function = takum64_lb_1_plus,
-			.takum_linear8_function = takum_linear8_lb_1_plus,
-			.takum_linear16_function = takum_linear16_lb_1_plus,
-			.takum_linear32_function = takum_linear32_lb_1_plus,
-			.takum_linear64_function = takum_linear64_lb_1_plus,
+			.takum_log8_function = takum_log8_lb_1_plus,
+			.takum_log16_function = takum_log16_lb_1_plus,
+			.takum_log32_function = takum_log32_lb_1_plus,
+			.takum_log64_function = takum_log64_lb_1_plus,
 		},
 	},
 	{
@@ -1279,10 +1264,10 @@ static const struct {
 			.takum16_function = takum16_lg,
 			.takum32_function = takum32_lg,
 			.takum64_function = takum64_lg,
-			.takum_linear8_function = takum_linear8_lg,
-			.takum_linear16_function = takum_linear16_lg,
-			.takum_linear32_function = takum_linear32_lg,
-			.takum_linear64_function = takum_linear64_lg,
+			.takum_log8_function = takum_log8_lg,
+			.takum_log16_function = takum_log16_lg,
+			.takum_log32_function = takum_log32_lg,
+			.takum_log64_function = takum_log64_lg,
 		},
 	},
 	{
@@ -1293,10 +1278,10 @@ static const struct {
 			.takum16_function = takum16_lg_1_plus,
 			.takum32_function = takum32_lg_1_plus,
 			.takum64_function = takum64_lg_1_plus,
-			.takum_linear8_function = takum_linear8_lg_1_plus,
-			.takum_linear16_function = takum_linear16_lg_1_plus,
-			.takum_linear32_function = takum_linear32_lg_1_plus,
-			.takum_linear64_function = takum_linear64_lg_1_plus,
+			.takum_log8_function = takum_log8_lg_1_plus,
+			.takum_log16_function = takum_log16_lg_1_plus,
+			.takum_log32_function = takum_log32_lg_1_plus,
+			.takum_log64_function = takum_log64_lg_1_plus,
 		},
 	},
 	{
@@ -1307,10 +1292,10 @@ static const struct {
 			.takum16_function = takum16_ln,
 			.takum32_function = takum32_ln,
 			.takum64_function = takum64_ln,
-			.takum_linear8_function = takum_linear8_ln,
-			.takum_linear16_function = takum_linear16_ln,
-			.takum_linear32_function = takum_linear32_ln,
-			.takum_linear64_function = takum_linear64_ln,
+			.takum_log8_function = takum_log8_ln,
+			.takum_log16_function = takum_log16_ln,
+			.takum_log32_function = takum_log32_ln,
+			.takum_log64_function = takum_log64_ln,
 		},
 	},
 	{
@@ -1321,10 +1306,10 @@ static const struct {
 			.takum16_function = takum16_ln_1_plus,
 			.takum32_function = takum32_ln_1_plus,
 			.takum64_function = takum64_ln_1_plus,
-			.takum_linear8_function = takum_linear8_ln_1_plus,
-			.takum_linear16_function = takum_linear16_ln_1_plus,
-			.takum_linear32_function = takum_linear32_ln_1_plus,
-			.takum_linear64_function = takum_linear64_ln_1_plus,
+			.takum_log8_function = takum_log8_ln_1_plus,
+			.takum_log16_function = takum_log16_ln_1_plus,
+			.takum_log32_function = takum_log32_ln_1_plus,
+			.takum_log64_function = takum_log64_ln_1_plus,
 		},
 	},
 	{
@@ -1339,10 +1324,10 @@ static const struct {
 			.takum16_function = takum16_sec,
 			.takum32_function = takum32_sec,
 			.takum64_function = takum64_sec,
-			.takum_linear8_function = takum_linear8_sec,
-			.takum_linear16_function = takum_linear16_sec,
-			.takum_linear32_function = takum_linear32_sec,
-			.takum_linear64_function = takum_linear64_sec,
+			.takum_log8_function = takum_log8_sec,
+			.takum_log16_function = takum_log16_sec,
+			.takum_log32_function = takum_log32_sec,
+			.takum_log64_function = takum_log64_sec,
 		},
 	},
 	{
@@ -1353,10 +1338,10 @@ static const struct {
 			.takum16_function = takum16_sec_pi_times,
 			.takum32_function = takum32_sec_pi_times,
 			.takum64_function = takum64_sec_pi_times,
-			.takum_linear8_function = takum_linear8_sec_pi_times,
-			.takum_linear16_function = takum_linear16_sec_pi_times,
-			.takum_linear32_function = takum_linear32_sec_pi_times,
-			.takum_linear64_function = takum_linear64_sec_pi_times,
+			.takum_log8_function = takum_log8_sec_pi_times,
+			.takum_log16_function = takum_log16_sec_pi_times,
+			.takum_log32_function = takum_log32_sec_pi_times,
+			.takum_log64_function = takum_log64_sec_pi_times,
 		},
 	},
 	{
@@ -1367,10 +1352,10 @@ static const struct {
 			.takum16_function = takum16_sech,
 			.takum32_function = takum32_sech,
 			.takum64_function = takum64_sech,
-			.takum_linear8_function = takum_linear8_sech,
-			.takum_linear16_function = takum_linear16_sech,
-			.takum_linear32_function = takum_linear32_sech,
-			.takum_linear64_function = takum_linear64_sech,
+			.takum_log8_function = takum_log8_sech,
+			.takum_log16_function = takum_log16_sech,
+			.takum_log32_function = takum_log32_sech,
+			.takum_log64_function = takum_log64_sech,
 		},
 	},
 	{
@@ -1381,10 +1366,10 @@ static const struct {
 			.takum16_function = takum16_sign,
 			.takum32_function = takum32_sign,
 			.takum64_function = takum64_sign,
-			.takum_linear8_function = takum_linear8_sign,
-			.takum_linear16_function = takum_linear16_sign,
-			.takum_linear32_function = takum_linear32_sign,
-			.takum_linear64_function = takum_linear64_sign,
+			.takum_log8_function = takum_log8_sign,
+			.takum_log16_function = takum_log16_sign,
+			.takum_log32_function = takum_log32_sign,
+			.takum_log64_function = takum_log64_sign,
 		},
 	},
 	{
@@ -1395,10 +1380,10 @@ static const struct {
 			.takum16_function = takum16_sin,
 			.takum32_function = takum32_sin,
 			.takum64_function = takum64_sin,
-			.takum_linear8_function = takum_linear8_sin,
-			.takum_linear16_function = takum_linear16_sin,
-			.takum_linear32_function = takum_linear32_sin,
-			.takum_linear64_function = takum_linear64_sin,
+			.takum_log8_function = takum_log8_sin,
+			.takum_log16_function = takum_log16_sin,
+			.takum_log32_function = takum_log32_sin,
+			.takum_log64_function = takum_log64_sin,
 		},
 	},
 	{
@@ -1409,10 +1394,10 @@ static const struct {
 			.takum16_function = takum16_sin_pi_times,
 			.takum32_function = takum32_sin_pi_times,
 			.takum64_function = takum64_sin_pi_times,
-			.takum_linear8_function = takum_linear8_sin_pi_times,
-			.takum_linear16_function = takum_linear16_sin_pi_times,
-			.takum_linear32_function = takum_linear32_sin_pi_times,
-			.takum_linear64_function = takum_linear64_sin_pi_times,
+			.takum_log8_function = takum_log8_sin_pi_times,
+			.takum_log16_function = takum_log16_sin_pi_times,
+			.takum_log32_function = takum_log32_sin_pi_times,
+			.takum_log64_function = takum_log64_sin_pi_times,
 		},
 	},
 	{
@@ -1423,10 +1408,10 @@ static const struct {
 			.takum16_function = takum16_sinh,
 			.takum32_function = takum32_sinh,
 			.takum64_function = takum64_sinh,
-			.takum_linear8_function = takum_linear8_sinh,
-			.takum_linear16_function = takum_linear16_sinh,
-			.takum_linear32_function = takum_linear32_sinh,
-			.takum_linear64_function = takum_linear64_sinh,
+			.takum_log8_function = takum_log8_sinh,
+			.takum_log16_function = takum_log16_sinh,
+			.takum_log32_function = takum_log32_sinh,
+			.takum_log64_function = takum_log64_sinh,
 		},
 	},
 	{
@@ -1437,10 +1422,10 @@ static const struct {
 			.takum16_function = takum16_square_root,
 			.takum32_function = takum32_square_root,
 			.takum64_function = takum64_square_root,
-			.takum_linear8_function = takum_linear8_square_root,
-			.takum_linear16_function = takum_linear16_square_root,
-			.takum_linear32_function = takum_linear32_square_root,
-			.takum_linear64_function = takum_linear64_square_root,
+			.takum_log8_function = takum_log8_square_root,
+			.takum_log16_function = takum_log16_square_root,
+			.takum_log32_function = takum_log32_square_root,
+			.takum_log64_function = takum_log64_square_root,
 		},
 	},
 	{
@@ -1472,31 +1457,31 @@ static const struct {
 		},
 	},
 	{
-		.identifier = "takum_linear8",
+		.identifier = "takum_log8",
 		.type = OPERATOR_TYPE_SWITCH_TAKUM_TYPE,
 		.implementation.switch_takum_type = {
-			.type = TAKUM_TYPE_TAKUM_LINEAR8,
+			.type = TAKUM_TYPE_TAKUM_LOG8,
 		},
 	},
 	{
-		.identifier = "takum_linear16",
+		.identifier = "takum_log16",
 		.type = OPERATOR_TYPE_SWITCH_TAKUM_TYPE,
 		.implementation.switch_takum_type = {
-			.type = TAKUM_TYPE_TAKUM_LINEAR16,
+			.type = TAKUM_TYPE_TAKUM_LOG16,
 		},
 	},
 	{
-		.identifier = "takum_linear32",
+		.identifier = "takum_log32",
 		.type = OPERATOR_TYPE_SWITCH_TAKUM_TYPE,
 		.implementation.switch_takum_type = {
-			.type = TAKUM_TYPE_TAKUM_LINEAR32,
+			.type = TAKUM_TYPE_TAKUM_LOG32,
 		},
 	},
 	{
-		.identifier = "takum_linear64",
+		.identifier = "takum_log64",
 		.type = OPERATOR_TYPE_SWITCH_TAKUM_TYPE,
 		.implementation.switch_takum_type = {
-			.type = TAKUM_TYPE_TAKUM_LINEAR64,
+			.type = TAKUM_TYPE_TAKUM_LOG64,
 		},
 	},
 	{
@@ -1507,10 +1492,10 @@ static const struct {
 			.takum16_function = takum16_tan,
 			.takum32_function = takum32_tan,
 			.takum64_function = takum64_tan,
-			.takum_linear8_function = takum_linear8_tan,
-			.takum_linear16_function = takum_linear16_tan,
-			.takum_linear32_function = takum_linear32_tan,
-			.takum_linear64_function = takum_linear64_tan,
+			.takum_log8_function = takum_log8_tan,
+			.takum_log16_function = takum_log16_tan,
+			.takum_log32_function = takum_log32_tan,
+			.takum_log64_function = takum_log64_tan,
 		},
 	},
 	{
@@ -1521,10 +1506,10 @@ static const struct {
 			.takum16_function = takum16_tan_pi_times,
 			.takum32_function = takum32_tan_pi_times,
 			.takum64_function = takum64_tan_pi_times,
-			.takum_linear8_function = takum_linear8_tan_pi_times,
-			.takum_linear16_function = takum_linear16_tan_pi_times,
-			.takum_linear32_function = takum_linear32_tan_pi_times,
-			.takum_linear64_function = takum_linear64_tan_pi_times,
+			.takum_log8_function = takum_log8_tan_pi_times,
+			.takum_log16_function = takum_log16_tan_pi_times,
+			.takum_log32_function = takum_log32_tan_pi_times,
+			.takum_log64_function = takum_log64_tan_pi_times,
 		},
 	},
 	{
@@ -1535,10 +1520,10 @@ static const struct {
 			.takum16_function = takum16_tanh,
 			.takum32_function = takum32_tanh,
 			.takum64_function = takum64_tanh,
-			.takum_linear8_function = takum_linear8_tanh,
-			.takum_linear16_function = takum_linear16_tanh,
-			.takum_linear32_function = takum_linear32_tanh,
-			.takum_linear64_function = takum_linear64_tanh,
+			.takum_log8_function = takum_log8_tanh,
+			.takum_log16_function = takum_log16_tanh,
+			.takum_log32_function = takum_log32_tanh,
+			.takum_log64_function = takum_log64_tanh,
 		},
 	},
 };
@@ -1659,32 +1644,32 @@ process_token(const char *token, struct stack *stack,
 					                      b->takum64_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR8:
-					number_from_takum_linear8(
-						takum_linear8_power(
-							a->takum_linear8_value,
-							b->takum_linear8_value),
+				case TAKUM_TYPE_TAKUM_LOG8:
+					number_from_takum_log8(
+						takum_log8_power(
+							a->takum_log8_value,
+							b->takum_log8_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR16:
-					number_from_takum_linear16(
-						takum_linear16_power(
-							a->takum_linear16_value,
-							b->takum_linear16_value),
+				case TAKUM_TYPE_TAKUM_LOG16:
+					number_from_takum_log16(
+						takum_log16_power(
+							a->takum_log16_value,
+							b->takum_log16_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR32:
-					number_from_takum_linear32(
-						takum_linear32_power(
-							a->takum_linear32_value,
-							b->takum_linear32_value),
+				case TAKUM_TYPE_TAKUM_LOG32:
+					number_from_takum_log32(
+						takum_log32_power(
+							a->takum_log32_value,
+							b->takum_log32_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR64:
-					number_from_takum_linear64(
-						takum_linear64_power(
-							a->takum_linear64_value,
-							b->takum_linear64_value),
+				case TAKUM_TYPE_TAKUM_LOG64:
+					number_from_takum_log64(
+						takum_log64_power(
+							a->takum_log64_value,
+							b->takum_log64_value),
 						&result);
 					break;
 				}
@@ -1718,31 +1703,31 @@ process_token(const char *token, struct stack *stack,
 							b->integer_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR8:
-					number_from_takum_linear8(
-						takum_linear8_integer_power(
-							a->takum_linear8_value,
+				case TAKUM_TYPE_TAKUM_LOG8:
+					number_from_takum_log8(
+						takum_log8_integer_power(
+							a->takum_log8_value,
 							b->integer_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR16:
-					number_from_takum_linear16(
-						takum_linear16_integer_power(
-							a->takum_linear16_value,
+				case TAKUM_TYPE_TAKUM_LOG16:
+					number_from_takum_log16(
+						takum_log16_integer_power(
+							a->takum_log16_value,
 							b->integer_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR32:
-					number_from_takum_linear32(
-						takum_linear32_integer_power(
-							a->takum_linear32_value,
+				case TAKUM_TYPE_TAKUM_LOG32:
+					number_from_takum_log32(
+						takum_log32_integer_power(
+							a->takum_log32_value,
 							b->integer_value),
 						&result);
 					break;
-				case TAKUM_TYPE_TAKUM_LINEAR64:
-					number_from_takum_linear64(
-						takum_linear64_integer_power(
-							a->takum_linear64_value,
+				case TAKUM_TYPE_TAKUM_LOG64:
+					number_from_takum_log64(
+						takum_log64_integer_power(
+							a->takum_log64_value,
 							b->integer_value),
 						&result);
 					break;
@@ -1798,38 +1783,38 @@ process_token(const char *token, struct stack *stack,
 							result.integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR8:
-				result.integer_value = takum_linear8_precision(
-					a->takum_linear8_value);
-				number_from_takum_linear8(
-					takum_linear8_from_extended_float(
+			case TAKUM_TYPE_TAKUM_LOG8:
+				result.integer_value = takum_log8_precision(
+					a->takum_log8_value);
+				number_from_takum_log8(
+					takum_log8_from_extended_float(
 						(long double)
 							result.integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR16:
-				result.integer_value = takum_linear16_precision(
-					a->takum_linear16_value);
-				number_from_takum_linear16(
-					takum_linear16_from_extended_float(
+			case TAKUM_TYPE_TAKUM_LOG16:
+				result.integer_value = takum_log16_precision(
+					a->takum_log16_value);
+				number_from_takum_log16(
+					takum_log16_from_extended_float(
 						(long double)
 							result.integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR32:
-				result.integer_value = takum_linear32_precision(
-					a->takum_linear32_value);
-				number_from_takum_linear32(
-					takum_linear32_from_extended_float(
+			case TAKUM_TYPE_TAKUM_LOG32:
+				result.integer_value = takum_log32_precision(
+					a->takum_log32_value);
+				number_from_takum_log32(
+					takum_log32_from_extended_float(
 						(long double)
 							result.integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR64:
-				result.integer_value = takum_linear64_precision(
-					a->takum_linear64_value);
-				number_from_takum_linear64(
-					takum_linear64_from_extended_float(
+			case TAKUM_TYPE_TAKUM_LOG64:
+				result.integer_value = takum_log64_precision(
+					a->takum_log64_value);
+				number_from_takum_log64(
+					takum_log64_from_extended_float(
 						(long double)
 							result.integer_value),
 					&result);
@@ -1900,43 +1885,43 @@ process_token(const char *token, struct stack *stack,
 							b->integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR8:
-				number_from_takum_linear8(
+			case TAKUM_TYPE_TAKUM_LOG8:
+				number_from_takum_log8(
 					operators[i]
 						.implementation
 						.takum_int64_takum
-						.takum_linear8_function(
-							a->takum_linear8_value,
+						.takum_log8_function(
+							a->takum_log8_value,
 							b->integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR16:
-				number_from_takum_linear16(
+			case TAKUM_TYPE_TAKUM_LOG16:
+				number_from_takum_log16(
 					operators[i]
 						.implementation
 						.takum_int64_takum
-						.takum_linear16_function(
-							a->takum_linear16_value,
+						.takum_log16_function(
+							a->takum_log16_value,
 							b->integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR32:
-				number_from_takum_linear32(
+			case TAKUM_TYPE_TAKUM_LOG32:
+				number_from_takum_log32(
 					operators[i]
 						.implementation
 						.takum_int64_takum
-						.takum_linear32_function(
-							a->takum_linear32_value,
+						.takum_log32_function(
+							a->takum_log32_value,
 							b->integer_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR64:
-				number_from_takum_linear64(
+			case TAKUM_TYPE_TAKUM_LOG64:
+				number_from_takum_log64(
 					operators[i]
 						.implementation
 						.takum_int64_takum
-						.takum_linear64_function(
-							a->takum_linear64_value,
+						.takum_log64_function(
+							a->takum_log64_value,
 							b->integer_value),
 					&result);
 				break;
@@ -1988,36 +1973,36 @@ process_token(const char *token, struct stack *stack,
 							a->takum64_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR8:
-				number_from_takum_linear8(
+			case TAKUM_TYPE_TAKUM_LOG8:
+				number_from_takum_log8(
 					operators[i]
 						.implementation.takum_takum
-						.takum_linear8_function(
-							a->takum_linear8_value),
+						.takum_log8_function(
+							a->takum_log8_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR16:
-				number_from_takum_linear16(
+			case TAKUM_TYPE_TAKUM_LOG16:
+				number_from_takum_log16(
 					operators[i]
 						.implementation.takum_takum
-						.takum_linear16_function(
-							a->takum_linear16_value),
+						.takum_log16_function(
+							a->takum_log16_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR32:
-				number_from_takum_linear32(
+			case TAKUM_TYPE_TAKUM_LOG32:
+				number_from_takum_log32(
 					operators[i]
 						.implementation.takum_takum
-						.takum_linear32_function(
-							a->takum_linear32_value),
+						.takum_log32_function(
+							a->takum_log32_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR64:
-				number_from_takum_linear64(
+			case TAKUM_TYPE_TAKUM_LOG64:
+				number_from_takum_log64(
 					operators[i]
 						.implementation.takum_takum
-						.takum_linear64_function(
-							a->takum_linear64_value),
+						.takum_log64_function(
+							a->takum_log64_value),
 					&result);
 				break;
 			}
@@ -2076,44 +2061,44 @@ process_token(const char *token, struct stack *stack,
 							b->takum64_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR8:
-				number_from_takum_linear8(
+			case TAKUM_TYPE_TAKUM_LOG8:
+				number_from_takum_log8(
 					operators[i]
 						.implementation
 						.takum_takum_takum
-						.takum_linear8_function(
-							a->takum_linear8_value,
-							b->takum_linear8_value),
+						.takum_log8_function(
+							a->takum_log8_value,
+							b->takum_log8_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR16:
-				number_from_takum_linear16(
+			case TAKUM_TYPE_TAKUM_LOG16:
+				number_from_takum_log16(
 					operators[i]
 						.implementation
 						.takum_takum_takum
-						.takum_linear16_function(
-							a->takum_linear16_value,
-							b->takum_linear16_value),
+						.takum_log16_function(
+							a->takum_log16_value,
+							b->takum_log16_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR32:
-				number_from_takum_linear32(
+			case TAKUM_TYPE_TAKUM_LOG32:
+				number_from_takum_log32(
 					operators[i]
 						.implementation
 						.takum_takum_takum
-						.takum_linear32_function(
-							a->takum_linear32_value,
-							b->takum_linear32_value),
+						.takum_log32_function(
+							a->takum_log32_value,
+							b->takum_log32_value),
 					&result);
 				break;
-			case TAKUM_TYPE_TAKUM_LINEAR64:
-				number_from_takum_linear64(
+			case TAKUM_TYPE_TAKUM_LOG64:
+				number_from_takum_log64(
 					operators[i]
 						.implementation
 						.takum_takum_takum
-						.takum_linear64_function(
-							a->takum_linear64_value,
-							b->takum_linear64_value),
+						.takum_log64_function(
+							a->takum_log64_value,
+							b->takum_log64_value),
 					&result);
 				break;
 			}

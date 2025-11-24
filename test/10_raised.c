@@ -19,10 +19,10 @@ static const struct unit_test_block ten_raised_utb = {
 		.takum16_function   = takum16_10_raised,
 		.takum32_function   = takum32_10_raised,
 		.takum64_function   = takum64_10_raised,
-		.takum_linear8_function    = takum_linear8_10_raised,
-		.takum_linear16_function   = takum_linear16_10_raised,
-		.takum_linear32_function   = takum_linear32_10_raised,
-		.takum_linear64_function   = takum_linear64_10_raised,
+		.takum_log8_function    = takum_log8_10_raised,
+		.takum_log16_function   = takum_log16_10_raised,
+		.takum_log32_function   = takum_log32_10_raised,
+		.takum_log64_function   = takum_log64_10_raised,
 	},
 };
 
@@ -41,10 +41,10 @@ static const struct unit_test_block ten_raised_minus_1_utb = {
 		.takum16_function   = takum16_10_raised_minus_1,
 		.takum32_function   = takum32_10_raised_minus_1,
 		.takum64_function   = takum64_10_raised_minus_1,
-		.takum_linear8_function    = takum_linear8_10_raised_minus_1,
-		.takum_linear16_function   = takum_linear16_10_raised_minus_1,
-		.takum_linear32_function   = takum_linear32_10_raised_minus_1,
-		.takum_linear64_function   = takum_linear64_10_raised_minus_1,
+		.takum_log8_function    = takum_log8_10_raised_minus_1,
+		.takum_log16_function   = takum_log16_10_raised_minus_1,
+		.takum_log32_function   = takum_log32_10_raised_minus_1,
+		.takum_log64_function   = takum_log64_10_raised_minus_1,
 	},
 };
 

@@ -7,7 +7,7 @@
 #define RESULT_FIXER_MACRO(arg, res) (res)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arcsin, asin, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arcsin, asin, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arcsin, asin, RESULT_FIXER_MACRO)
 
 /*
  * We extend to long double and multiply the argument with pi, returning a
@@ -28,5 +28,5 @@ arcsin_over_pi(double f)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arcsin_over_pi, arcsin_over_pi,
                                RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arcsin_over_pi, arcsin_over_pi,
-                                      RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arcsin_over_pi, arcsin_over_pi,
+                                   RESULT_FIXER_MACRO)

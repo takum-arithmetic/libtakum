@@ -22,5 +22,5 @@ subtractionl(long double a, long double b)
 }
 
 UTIL_BINARY_FLOAT_TAKUM_WRAPPER(subtraction, subtraction, RESULT_FIXER_MACRO)
-UTIL_BINARY_FLOAT_TAKUM_LINEAR_WRAPPER(subtraction, subtraction,
-                                       RESULT_FIXER_MACRO)
+UTIL_BINARY_FLOAT_TAKUM_LOG_WRAPPER(subtraction, subtraction,
+                                    RESULT_FIXER_MACRO)

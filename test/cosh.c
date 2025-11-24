@@ -19,10 +19,10 @@ static const struct unit_test_block cosh_utb = {
 		.takum16_function   = takum16_cosh,
 		.takum32_function   = takum32_cosh,
 		.takum64_function   = takum64_cosh,
-		.takum_linear8_function    = takum_linear8_cosh,
-		.takum_linear16_function   = takum_linear16_cosh,
-		.takum_linear32_function   = takum_linear32_cosh,
-		.takum_linear64_function   = takum_linear64_cosh,
+		.takum_log8_function    = takum_log8_cosh,
+		.takum_log16_function   = takum_log16_cosh,
+		.takum_log32_function   = takum_log32_cosh,
+		.takum_log64_function   = takum_log64_cosh,
 	},
 };
 

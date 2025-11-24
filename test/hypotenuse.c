@@ -19,10 +19,10 @@ static const struct unit_test_block hypotenuse_utb = {
 		.takum16_function   = takum16_hypotenuse,
 		.takum32_function   = takum32_hypotenuse,
 		.takum64_function   = takum64_hypotenuse,
-		.takum_linear8_function    = takum_linear8_hypotenuse,
-		.takum_linear16_function   = takum_linear16_hypotenuse,
-		.takum_linear32_function   = takum_linear32_hypotenuse,
-		.takum_linear64_function   = takum_linear64_hypotenuse,
+		.takum_log8_function    = takum_log8_hypotenuse,
+		.takum_log16_function   = takum_log16_hypotenuse,
+		.takum_log32_function   = takum_log32_hypotenuse,
+		.takum_log64_function   = takum_log64_hypotenuse,
 	},
 };
 

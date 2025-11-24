@@ -11,7 +11,7 @@
 #define RESULT_FIXER_MACRO(arg, res) (res)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(cos, cos, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(cos, cos, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(cos, cos, RESULT_FIXER_MACRO)
 
 /*
  * We extend to long double and multiply the argument with pi, returning a
@@ -45,4 +45,4 @@ cospi(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(cos_pi_times, cospi, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(cos_pi_times, cospi, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(cos_pi_times, cospi, RESULT_FIXER_MACRO)

@@ -11,7 +11,7 @@
 #define RESULT_FIXER_MACRO(arg, res) (res)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(sin, sin, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(sin, sin, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(sin, sin, RESULT_FIXER_MACRO)
 
 /*
  * We extend to long double and multiply the argument with pi, returning a
@@ -45,4 +45,4 @@ sinpi(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(sin_pi_times, sinpi, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(sin_pi_times, sinpi, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(sin_pi_times, sinpi, RESULT_FIXER_MACRO)

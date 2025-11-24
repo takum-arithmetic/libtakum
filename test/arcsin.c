@@ -19,10 +19,10 @@ static const struct unit_test_block arcsin_utb = {
 		.takum16_function   = takum16_arcsin,
 		.takum32_function   = takum32_arcsin,
 		.takum64_function   = takum64_arcsin,
-		.takum_linear8_function    = takum_linear8_arcsin,
-		.takum_linear16_function   = takum_linear16_arcsin,
-		.takum_linear32_function   = takum_linear32_arcsin,
-		.takum_linear64_function   = takum_linear64_arcsin,
+		.takum_log8_function    = takum_log8_arcsin,
+		.takum_log16_function   = takum_log16_arcsin,
+		.takum_log32_function   = takum_log32_arcsin,
+		.takum_log64_function   = takum_log64_arcsin,
 	},
 };
 
@@ -41,10 +41,10 @@ static const struct unit_test_block arcsin_over_pi_utb = {
 		.takum16_function   = takum16_arcsin_over_pi,
 		.takum32_function   = takum32_arcsin_over_pi,
 		.takum64_function   = takum64_arcsin_over_pi,
-		.takum_linear8_function    = takum_linear8_arcsin_over_pi,
-		.takum_linear16_function   = takum_linear16_arcsin_over_pi,
-		.takum_linear32_function   = takum_linear32_arcsin_over_pi,
-		.takum_linear64_function   = takum_linear64_arcsin_over_pi,
+		.takum_log8_function    = takum_log8_arcsin_over_pi,
+		.takum_log16_function   = takum_log16_arcsin_over_pi,
+		.takum_log32_function   = takum_log32_arcsin_over_pi,
+		.takum_log64_function   = takum_log64_arcsin_over_pi,
 	},
 };
 

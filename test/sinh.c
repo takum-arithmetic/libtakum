@@ -19,10 +19,10 @@ static const struct unit_test_block sinh_utb = {
 		.takum16_function   = takum16_sinh,
 		.takum32_function   = takum32_sinh,
 		.takum64_function   = takum64_sinh,
-		.takum_linear8_function    = takum_linear8_sinh,
-		.takum_linear16_function   = takum_linear16_sinh,
-		.takum_linear32_function   = takum_linear32_sinh,
-		.takum_linear64_function   = takum_linear64_sinh,
+		.takum_log8_function    = takum_log8_sinh,
+		.takum_log16_function   = takum_log16_sinh,
+		.takum_log32_function   = takum_log32_sinh,
+		.takum_log64_function   = takum_log64_sinh,
 	},
 };
 

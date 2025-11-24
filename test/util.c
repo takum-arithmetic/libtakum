@@ -219,19 +219,19 @@ random_next(int64_t previous_state, enum takum_type takum_type)
 {
 	switch (takum_type) {
 	case TAKUM8:
-	case TAKUM_LINEAR8:
+	case TAKUM_LOG8:
 		return (int64_t)random_int8_next((int8_t)previous_state);
 		break;
 	case TAKUM16:
-	case TAKUM_LINEAR16:
+	case TAKUM_LOG16:
 		return (int64_t)random_int16_next((int16_t)previous_state);
 		break;
 	case TAKUM32:
-	case TAKUM_LINEAR32:
+	case TAKUM_LOG32:
 		return (int64_t)random_int32_next((int32_t)previous_state);
 		break;
 	case TAKUM64:
-	case TAKUM_LINEAR64:
+	case TAKUM_LOG64:
 		return random_int64_next(previous_state);
 		break;
 	}
@@ -264,27 +264,27 @@ int64_takum64_to_extended_float(int64_t t)
 }
 
 static long double
-int64_takum_linear8_to_extended_float(int64_t t)
+int64_takum_log8_to_extended_float(int64_t t)
 {
-	return takum_linear8_to_extended_float((takum_linear8)t);
+	return takum_log8_to_extended_float((takum_log8)t);
 }
 
 static long double
-int64_takum_linear16_to_extended_float(int64_t t)
+int64_takum_log16_to_extended_float(int64_t t)
 {
-	return takum_linear16_to_extended_float((takum_linear16)t);
+	return takum_log16_to_extended_float((takum_log16)t);
 }
 
 static long double
-int64_takum_linear32_to_extended_float(int64_t t)
+int64_takum_log32_to_extended_float(int64_t t)
 {
-	return takum_linear32_to_extended_float((takum_linear32)t);
+	return takum_log32_to_extended_float((takum_log32)t);
 }
 
 static long double
-int64_takum_linear64_to_extended_float(int64_t t)
+int64_takum_log64_to_extended_float(int64_t t)
 {
-	return takum_linear64_to_extended_float((takum_linear64)t);
+	return takum_log64_to_extended_float((takum_log64)t);
 }
 
 static int64_t
@@ -312,27 +312,27 @@ int64_takum64_from_extended_float(long double f)
 }
 
 static int64_t
-int64_takum_linear8_from_extended_float(long double f)
+int64_takum_log8_from_extended_float(long double f)
 {
-	return (int64_t)takum_linear8_from_extended_float(f);
+	return (int64_t)takum_log8_from_extended_float(f);
 }
 
 static int64_t
-int64_takum_linear16_from_extended_float(long double f)
+int64_takum_log16_from_extended_float(long double f)
 {
-	return (int64_t)takum_linear16_from_extended_float(f);
+	return (int64_t)takum_log16_from_extended_float(f);
 }
 
 static int64_t
-int64_takum_linear32_from_extended_float(long double f)
+int64_takum_log32_from_extended_float(long double f)
 {
-	return (int64_t)takum_linear32_from_extended_float(f);
+	return (int64_t)takum_log32_from_extended_float(f);
 }
 
 static int64_t
-int64_takum_linear64_from_extended_float(long double f)
+int64_takum_log64_from_extended_float(long double f)
 {
-	return (int64_t)takum_linear64_from_extended_float(f);
+	return (int64_t)takum_log64_from_extended_float(f);
 }
 
 const struct takum_type_parameters takum_type_parameters[] = {
@@ -376,45 +376,45 @@ const struct takum_type_parameters takum_type_parameters[] = {
 		.int64_takum_to_extended_float = int64_takum64_to_extended_float,
 		.int64_takum_from_extended_float = int64_takum64_from_extended_float,
 	},
-	[TAKUM_LINEAR8] = {
-		.name             = "takum_linear8",
+	[TAKUM_LOG8] = {
+		.name             = "takum_log8",
 		.n                = 8,
-		.nar              = TAKUM_LINEAR8_NAR,
-		.positive_minimum = TAKUM_LINEAR8_POSITIVE_MINIMUM,
-		.positive_maximum = TAKUM_LINEAR8_POSITIVE_MAXIMUM,
+		.nar              = TAKUM_LOG8_NAR,
+		.positive_minimum = TAKUM_LOG8_POSITIVE_MINIMUM,
+		.positive_maximum = TAKUM_LOG8_POSITIVE_MAXIMUM,
 		.count            = (uint64_t)UINT8_MAX + 1,
-		.int64_takum_to_extended_float = int64_takum_linear8_to_extended_float,
-		.int64_takum_from_extended_float = int64_takum_linear8_from_extended_float,
+		.int64_takum_to_extended_float = int64_takum_log8_to_extended_float,
+		.int64_takum_from_extended_float = int64_takum_log8_from_extended_float,
 	},
-	[TAKUM_LINEAR16] = {
-		.name             = "takum_linear16",
+	[TAKUM_LOG16] = {
+		.name             = "takum_log16",
 		.n                = 16,
-		.nar              = TAKUM_LINEAR16_NAR,
-		.positive_minimum = TAKUM_LINEAR16_POSITIVE_MINIMUM,
-		.positive_maximum = TAKUM_LINEAR16_POSITIVE_MAXIMUM,
+		.nar              = TAKUM_LOG16_NAR,
+		.positive_minimum = TAKUM_LOG16_POSITIVE_MINIMUM,
+		.positive_maximum = TAKUM_LOG16_POSITIVE_MAXIMUM,
 		.count            = (uint64_t)UINT16_MAX + 1,
-		.int64_takum_to_extended_float = int64_takum_linear16_to_extended_float,
-		.int64_takum_from_extended_float = int64_takum_linear16_from_extended_float,
+		.int64_takum_to_extended_float = int64_takum_log16_to_extended_float,
+		.int64_takum_from_extended_float = int64_takum_log16_from_extended_float,
 	},
-	[TAKUM_LINEAR32] = {
-		.name             = "takum_linear32",
+	[TAKUM_LOG32] = {
+		.name             = "takum_log32",
 		.n                = 32,
-		.nar              = TAKUM_LINEAR32_NAR,
-		.positive_minimum = TAKUM_LINEAR32_POSITIVE_MINIMUM,
-		.positive_maximum = TAKUM_LINEAR32_POSITIVE_MAXIMUM,
+		.nar              = TAKUM_LOG32_NAR,
+		.positive_minimum = TAKUM_LOG32_POSITIVE_MINIMUM,
+		.positive_maximum = TAKUM_LOG32_POSITIVE_MAXIMUM,
 		.count            = (uint64_t)UINT32_MAX + 1,
-		.int64_takum_to_extended_float = int64_takum_linear32_to_extended_float,
-		.int64_takum_from_extended_float = int64_takum_linear32_from_extended_float,
+		.int64_takum_to_extended_float = int64_takum_log32_to_extended_float,
+		.int64_takum_from_extended_float = int64_takum_log32_from_extended_float,
 	},
-	[TAKUM_LINEAR64] = {
-		.name             = "takum_linear64",
+	[TAKUM_LOG64] = {
+		.name             = "takum_log64",
 		.n                = 64,
-		.nar              = TAKUM_LINEAR64_NAR,
-		.positive_minimum = TAKUM_LINEAR64_POSITIVE_MINIMUM,
-		.positive_maximum = TAKUM_LINEAR64_POSITIVE_MAXIMUM,
+		.nar              = TAKUM_LOG64_NAR,
+		.positive_minimum = TAKUM_LOG64_POSITIVE_MINIMUM,
+		.positive_maximum = TAKUM_LOG64_POSITIVE_MAXIMUM,
 		.count            = UINT64_MAX /* + 1, but would overflow */,
-		.int64_takum_to_extended_float = int64_takum_linear64_to_extended_float,
-		.int64_takum_from_extended_float = int64_takum_linear64_from_extended_float,
+		.int64_takum_to_extended_float = int64_takum_log64_to_extended_float,
+		.int64_takum_from_extended_float = int64_takum_log64_from_extended_float,
 	},
 };
 
@@ -553,38 +553,38 @@ check_unary_binary_case(const struct unit_test_block *utb, int64_t a, int64_t b,
 				return 0;
 			}
 			break;
-		case TAKUM_LINEAR8:
-			if (utb->data.roundtrip.takum_linear8_function) {
+		case TAKUM_LOG8:
+			if (utb->data.roundtrip.takum_log8_function) {
 				output = (int64_t)utb->data.roundtrip
-				                 .takum_linear8_function(
-							 (takum_linear8)a);
+				                 .takum_log8_function(
+							 (takum_log8)a);
 			} else {
 				return 0;
 			}
 			break;
-		case TAKUM_LINEAR16:
-			if (utb->data.roundtrip.takum_linear16_function) {
+		case TAKUM_LOG16:
+			if (utb->data.roundtrip.takum_log16_function) {
 				output = (int64_t)utb->data.roundtrip
-				                 .takum_linear16_function(
-							 (takum_linear16)a);
+				                 .takum_log16_function(
+							 (takum_log16)a);
 			} else {
 				return 0;
 			}
 			break;
-		case TAKUM_LINEAR32:
-			if (utb->data.roundtrip.takum_linear32_function) {
+		case TAKUM_LOG32:
+			if (utb->data.roundtrip.takum_log32_function) {
 				output = (int64_t)utb->data.roundtrip
-				                 .takum_linear32_function(
-							 (takum_linear32)a);
+				                 .takum_log32_function(
+							 (takum_log32)a);
 			} else {
 				return 0;
 			}
 			break;
-		case TAKUM_LINEAR64:
-			if (utb->data.roundtrip.takum_linear64_function) {
+		case TAKUM_LOG64:
+			if (utb->data.roundtrip.takum_log64_function) {
 				output = (int64_t)utb->data.roundtrip
-				                 .takum_linear64_function(
-							 (takum_linear64)a);
+				                 .takum_log64_function(
+							 (takum_log64)a);
 			} else {
 				return 0;
 			}
@@ -615,25 +615,24 @@ check_unary_binary_case(const struct unit_test_block *utb, int64_t a, int64_t b,
 			output = (int64_t)utb->data.takum_int64_takum
 			                 .takum64_function((takum64)a, b);
 			break;
-		case TAKUM_LINEAR8:
+		case TAKUM_LOG8:
 			output = (int64_t)utb->data.takum_int64_takum
-			                 .takum_linear8_function(
-						 (takum_linear8)a, b);
+			                 .takum_log8_function((takum_log8)a, b);
 			break;
-		case TAKUM_LINEAR16:
+		case TAKUM_LOG16:
 			output = (int64_t)utb->data.takum_int64_takum
-			                 .takum_linear16_function(
-						 (takum_linear16)a, b);
+			                 .takum_log16_function((takum_log16)a,
+			                                       b);
 			break;
-		case TAKUM_LINEAR32:
+		case TAKUM_LOG32:
 			output = (int64_t)utb->data.takum_int64_takum
-			                 .takum_linear32_function(
-						 (takum_linear32)a, b);
+			                 .takum_log32_function((takum_log32)a,
+			                                       b);
 			break;
-		case TAKUM_LINEAR64:
+		case TAKUM_LOG64:
 			output = (int64_t)utb->data.takum_int64_takum
-			                 .takum_linear64_function(
-						 (takum_linear64)a, b);
+			                 .takum_log64_function((takum_log64)a,
+			                                       b);
 			break;
 		}
 
@@ -664,25 +663,21 @@ check_unary_binary_case(const struct unit_test_block *utb, int64_t a, int64_t b,
 				(int64_t)utb->data.takum_takum.takum64_function(
 					(takum64)a);
 			break;
-		case TAKUM_LINEAR8:
+		case TAKUM_LOG8:
 			output = (int64_t)utb->data.takum_takum
-			                 .takum_linear8_function(
-						 (takum_linear8)a);
+			                 .takum_log8_function((takum_log8)a);
 			break;
-		case TAKUM_LINEAR16:
+		case TAKUM_LOG16:
 			output = (int64_t)utb->data.takum_takum
-			                 .takum_linear16_function(
-						 (takum_linear16)a);
+			                 .takum_log16_function((takum_log16)a);
 			break;
-		case TAKUM_LINEAR32:
+		case TAKUM_LOG32:
 			output = (int64_t)utb->data.takum_takum
-			                 .takum_linear32_function(
-						 (takum_linear32)a);
+			                 .takum_log32_function((takum_log32)a);
 			break;
-		case TAKUM_LINEAR64:
+		case TAKUM_LOG64:
 			output = (int64_t)utb->data.takum_takum
-			                 .takum_linear64_function(
-						 (takum_linear64)a);
+			                 .takum_log64_function((takum_log64)a);
 			break;
 		}
 
@@ -713,29 +708,25 @@ check_unary_binary_case(const struct unit_test_block *utb, int64_t a, int64_t b,
 			                 .takum64_function((takum64)a,
 			                                   (takum64)b);
 			break;
-		case TAKUM_LINEAR8:
+		case TAKUM_LOG8:
 			output = (int64_t)utb->data.takum_takum_takum
-			                 .takum_linear8_function(
-						 (takum_linear8)a,
-						 (takum_linear8)b);
+			                 .takum_log8_function((takum_log8)a,
+			                                      (takum_log8)b);
 			break;
-		case TAKUM_LINEAR16:
+		case TAKUM_LOG16:
 			output = (int64_t)utb->data.takum_takum_takum
-			                 .takum_linear16_function(
-						 (takum_linear16)a,
-						 (takum_linear16)b);
+			                 .takum_log16_function((takum_log16)a,
+			                                       (takum_log16)b);
 			break;
-		case TAKUM_LINEAR32:
+		case TAKUM_LOG32:
 			output = (int64_t)utb->data.takum_takum_takum
-			                 .takum_linear32_function(
-						 (takum_linear32)a,
-						 (takum_linear32)b);
+			                 .takum_log32_function((takum_log32)a,
+			                                       (takum_log32)b);
 			break;
-		case TAKUM_LINEAR64:
+		case TAKUM_LOG64:
 			output = (int64_t)utb->data.takum_takum_takum
-			                 .takum_linear64_function(
-						 (takum_linear64)a,
-						 (takum_linear64)b);
+			                 .takum_log64_function((takum_log64)a,
+			                                       (takum_log64)b);
 			break;
 		}
 
@@ -766,25 +757,21 @@ check_unary_binary_case(const struct unit_test_block *utb, int64_t a, int64_t b,
 				(int64_t)utb->data.takum_uint8.takum64_function(
 					(takum64)a);
 			break;
-		case TAKUM_LINEAR8:
+		case TAKUM_LOG8:
 			output = (int64_t)utb->data.takum_uint8
-			                 .takum_linear8_function(
-						 (takum_linear8)a);
+			                 .takum_log8_function((takum_log8)a);
 			break;
-		case TAKUM_LINEAR16:
+		case TAKUM_LOG16:
 			output = (int64_t)utb->data.takum_uint8
-			                 .takum_linear16_function(
-						 (takum_linear16)a);
+			                 .takum_log16_function((takum_log16)a);
 			break;
-		case TAKUM_LINEAR32:
+		case TAKUM_LOG32:
 			output = (int64_t)utb->data.takum_uint8
-			                 .takum_linear32_function(
-						 (takum_linear32)a);
+			                 .takum_log32_function((takum_log32)a);
 			break;
-		case TAKUM_LINEAR64:
+		case TAKUM_LOG64:
 			output = (int64_t)utb->data.takum_uint8
-			                 .takum_linear64_function(
-						 (takum_linear64)a);
+			                 .takum_log64_function((takum_log64)a);
 			break;
 		}
 
@@ -1246,10 +1233,9 @@ run_unit_test_on_type(const struct unit_test_block *utb,
 			sampler.current_count);
 	} while (!sampler_next(&sampler));
 
-	printf("%s: %s_%s: %" PRIu64 "/%" PRIu64 " unit tests passed.\n",
-	       argv0, takum_type_parameters[takum_type].name,
-	       utb->function_name, sampler.target_count - failed_count,
-	       sampler.target_count);
+	printf("%s: %s_%s: %" PRIu64 "/%" PRIu64 " unit tests passed.\n", argv0,
+	       takum_type_parameters[takum_type].name, utb->function_name,
+	       sampler.target_count - failed_count, sampler.target_count);
 
 	return (failed_count > 0) ? 1 : 0;
 }
@@ -1266,10 +1252,8 @@ run_unit_test_block(const struct unit_test_block *utb)
 	       run_unit_test_on_type(utb, TAKUM16, maximum_sample_count) +
 	       run_unit_test_on_type(utb, TAKUM32, maximum_sample_count) +
 	       run_unit_test_on_type(utb, TAKUM64, maximum_sample_count) +
-	       run_unit_test_on_type(utb, TAKUM_LINEAR8, maximum_sample_count) +
-	       run_unit_test_on_type(utb, TAKUM_LINEAR16,
-	                             maximum_sample_count) +
-	       run_unit_test_on_type(utb, TAKUM_LINEAR32,
-	                             maximum_sample_count) +
-	       run_unit_test_on_type(utb, TAKUM_LINEAR64, maximum_sample_count);
+	       run_unit_test_on_type(utb, TAKUM_LOG8, maximum_sample_count) +
+	       run_unit_test_on_type(utb, TAKUM_LOG16, maximum_sample_count) +
+	       run_unit_test_on_type(utb, TAKUM_LOG32, maximum_sample_count) +
+	       run_unit_test_on_type(utb, TAKUM_LOG64, maximum_sample_count);
 }

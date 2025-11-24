@@ -6,7 +6,7 @@
 VERSION_MAJOR = 1
 VERSION_MINOR = 0
 VERSION_PATCH = 2
-MAN_DATE = 2025-09-10
+MAN_DATE = 2025-11-23
 
 include config.mk
 
@@ -123,610 +123,610 @@ MAN3 =\
 	man/takum16_10_raised\
 	man/takum32_10_raised\
 	man/takum64_10_raised\
-	man/takum_linear8_10_raised\
-	man/takum_linear16_10_raised\
-	man/takum_linear32_10_raised\
-	man/takum_linear64_10_raised\
+	man/takum_log8_10_raised\
+	man/takum_log16_10_raised\
+	man/takum_log32_10_raised\
+	man/takum_log64_10_raised\
 	man/takum8_10_raised_minus_1\
 	man/takum16_10_raised_minus_1\
 	man/takum32_10_raised_minus_1\
 	man/takum64_10_raised_minus_1\
-	man/takum_linear8_10_raised_minus_1\
-	man/takum_linear16_10_raised_minus_1\
-	man/takum_linear32_10_raised_minus_1\
-	man/takum_linear64_10_raised_minus_1\
+	man/takum_log8_10_raised_minus_1\
+	man/takum_log16_10_raised_minus_1\
+	man/takum_log32_10_raised_minus_1\
+	man/takum_log64_10_raised_minus_1\
 	man/takum8_2_raised\
 	man/takum16_2_raised\
 	man/takum32_2_raised\
 	man/takum64_2_raised\
-	man/takum_linear8_2_raised\
-	man/takum_linear16_2_raised\
-	man/takum_linear32_2_raised\
-	man/takum_linear64_2_raised\
+	man/takum_log8_2_raised\
+	man/takum_log16_2_raised\
+	man/takum_log32_2_raised\
+	man/takum_log64_2_raised\
 	man/takum8_2_raised_minus_1\
 	man/takum16_2_raised_minus_1\
 	man/takum32_2_raised_minus_1\
 	man/takum64_2_raised_minus_1\
-	man/takum_linear8_2_raised_minus_1\
-	man/takum_linear16_2_raised_minus_1\
-	man/takum_linear32_2_raised_minus_1\
-	man/takum_linear64_2_raised_minus_1\
+	man/takum_log8_2_raised_minus_1\
+	man/takum_log16_2_raised_minus_1\
+	man/takum_log32_2_raised_minus_1\
+	man/takum_log64_2_raised_minus_1\
 	man/takum8_absolute\
 	man/takum16_absolute\
 	man/takum32_absolute\
 	man/takum64_absolute\
-	man/takum_linear8_absolute\
-	man/takum_linear16_absolute\
-	man/takum_linear32_absolute\
-	man/takum_linear64_absolute\
+	man/takum_log8_absolute\
+	man/takum_log16_absolute\
+	man/takum_log32_absolute\
+	man/takum_log64_absolute\
 	man/takum8_addition\
 	man/takum16_addition\
 	man/takum32_addition\
 	man/takum64_addition\
-	man/takum_linear8_addition\
-	man/takum_linear16_addition\
-	man/takum_linear32_addition\
-	man/takum_linear64_addition\
+	man/takum_log8_addition\
+	man/takum_log16_addition\
+	man/takum_log32_addition\
+	man/takum_log64_addition\
 	man/takum8_arccos\
 	man/takum16_arccos\
 	man/takum32_arccos\
 	man/takum64_arccos\
-	man/takum_linear8_arccos\
-	man/takum_linear16_arccos\
-	man/takum_linear32_arccos\
-	man/takum_linear64_arccos\
+	man/takum_log8_arccos\
+	man/takum_log16_arccos\
+	man/takum_log32_arccos\
+	man/takum_log64_arccos\
 	man/takum8_arccos_over_pi\
 	man/takum16_arccos_over_pi\
 	man/takum32_arccos_over_pi\
 	man/takum64_arccos_over_pi\
-	man/takum_linear8_arccos_over_pi\
-	man/takum_linear16_arccos_over_pi\
-	man/takum_linear32_arccos_over_pi\
-	man/takum_linear64_arccos_over_pi\
+	man/takum_log8_arccos_over_pi\
+	man/takum_log16_arccos_over_pi\
+	man/takum_log32_arccos_over_pi\
+	man/takum_log64_arccos_over_pi\
 	man/takum8_arccot\
 	man/takum16_arccot\
 	man/takum32_arccot\
 	man/takum64_arccot\
-	man/takum_linear8_arccot\
-	man/takum_linear16_arccot\
-	man/takum_linear32_arccot\
-	man/takum_linear64_arccot\
+	man/takum_log8_arccot\
+	man/takum_log16_arccot\
+	man/takum_log32_arccot\
+	man/takum_log64_arccot\
 	man/takum8_arccot_over_pi\
 	man/takum16_arccot_over_pi\
 	man/takum32_arccot_over_pi\
 	man/takum64_arccot_over_pi\
-	man/takum_linear8_arccot_over_pi\
-	man/takum_linear16_arccot_over_pi\
-	man/takum_linear32_arccot_over_pi\
-	man/takum_linear64_arccot_over_pi\
+	man/takum_log8_arccot_over_pi\
+	man/takum_log16_arccot_over_pi\
+	man/takum_log32_arccot_over_pi\
+	man/takum_log64_arccot_over_pi\
 	man/takum8_arccsc\
 	man/takum16_arccsc\
 	man/takum32_arccsc\
 	man/takum64_arccsc\
-	man/takum_linear8_arccsc\
-	man/takum_linear16_arccsc\
-	man/takum_linear32_arccsc\
-	man/takum_linear64_arccsc\
+	man/takum_log8_arccsc\
+	man/takum_log16_arccsc\
+	man/takum_log32_arccsc\
+	man/takum_log64_arccsc\
 	man/takum8_arccsc_over_pi\
 	man/takum16_arccsc_over_pi\
 	man/takum32_arccsc_over_pi\
 	man/takum64_arccsc_over_pi\
-	man/takum_linear8_arccsc_over_pi\
-	man/takum_linear16_arccsc_over_pi\
-	man/takum_linear32_arccsc_over_pi\
-	man/takum_linear64_arccsc_over_pi\
+	man/takum_log8_arccsc_over_pi\
+	man/takum_log16_arccsc_over_pi\
+	man/takum_log32_arccsc_over_pi\
+	man/takum_log64_arccsc_over_pi\
 	man/takum8_arcosh\
 	man/takum16_arcosh\
 	man/takum32_arcosh\
 	man/takum64_arcosh\
-	man/takum_linear8_arcosh\
-	man/takum_linear16_arcosh\
-	man/takum_linear32_arcosh\
-	man/takum_linear64_arcosh\
+	man/takum_log8_arcosh\
+	man/takum_log16_arcosh\
+	man/takum_log32_arcosh\
+	man/takum_log64_arcosh\
 	man/takum8_arcoth\
 	man/takum16_arcoth\
 	man/takum32_arcoth\
 	man/takum64_arcoth\
-	man/takum_linear8_arcoth\
-	man/takum_linear16_arcoth\
-	man/takum_linear32_arcoth\
-	man/takum_linear64_arcoth\
+	man/takum_log8_arcoth\
+	man/takum_log16_arcoth\
+	man/takum_log32_arcoth\
+	man/takum_log64_arcoth\
 	man/takum8_arcsch\
 	man/takum16_arcsch\
 	man/takum32_arcsch\
 	man/takum64_arcsch\
-	man/takum_linear8_arcsch\
-	man/takum_linear16_arcsch\
-	man/takum_linear32_arcsch\
-	man/takum_linear64_arcsch\
+	man/takum_log8_arcsch\
+	man/takum_log16_arcsch\
+	man/takum_log32_arcsch\
+	man/takum_log64_arcsch\
 	man/takum8_arcsec\
 	man/takum16_arcsec\
 	man/takum32_arcsec\
 	man/takum64_arcsec\
-	man/takum_linear8_arcsec\
-	man/takum_linear16_arcsec\
-	man/takum_linear32_arcsec\
-	man/takum_linear64_arcsec\
+	man/takum_log8_arcsec\
+	man/takum_log16_arcsec\
+	man/takum_log32_arcsec\
+	man/takum_log64_arcsec\
 	man/takum8_arcsec_over_pi\
 	man/takum16_arcsec_over_pi\
 	man/takum32_arcsec_over_pi\
 	man/takum64_arcsec_over_pi\
-	man/takum_linear8_arcsec_over_pi\
-	man/takum_linear16_arcsec_over_pi\
-	man/takum_linear32_arcsec_over_pi\
-	man/takum_linear64_arcsec_over_pi\
+	man/takum_log8_arcsec_over_pi\
+	man/takum_log16_arcsec_over_pi\
+	man/takum_log32_arcsec_over_pi\
+	man/takum_log64_arcsec_over_pi\
 	man/takum8_arcsin\
 	man/takum16_arcsin\
 	man/takum32_arcsin\
 	man/takum64_arcsin\
-	man/takum_linear8_arcsin\
-	man/takum_linear16_arcsin\
-	man/takum_linear32_arcsin\
-	man/takum_linear64_arcsin\
+	man/takum_log8_arcsin\
+	man/takum_log16_arcsin\
+	man/takum_log32_arcsin\
+	man/takum_log64_arcsin\
 	man/takum8_arcsin_over_pi\
 	man/takum16_arcsin_over_pi\
 	man/takum32_arcsin_over_pi\
 	man/takum64_arcsin_over_pi\
-	man/takum_linear8_arcsin_over_pi\
-	man/takum_linear16_arcsin_over_pi\
-	man/takum_linear32_arcsin_over_pi\
-	man/takum_linear64_arcsin_over_pi\
+	man/takum_log8_arcsin_over_pi\
+	man/takum_log16_arcsin_over_pi\
+	man/takum_log32_arcsin_over_pi\
+	man/takum_log64_arcsin_over_pi\
 	man/takum8_arctan2\
 	man/takum16_arctan2\
 	man/takum32_arctan2\
 	man/takum64_arctan2\
-	man/takum_linear8_arctan2\
-	man/takum_linear16_arctan2\
-	man/takum_linear32_arctan2\
-	man/takum_linear64_arctan2\
+	man/takum_log8_arctan2\
+	man/takum_log16_arctan2\
+	man/takum_log32_arctan2\
+	man/takum_log64_arctan2\
 	man/takum8_arctan2_over_pi\
 	man/takum16_arctan2_over_pi\
 	man/takum32_arctan2_over_pi\
 	man/takum64_arctan2_over_pi\
-	man/takum_linear8_arctan2_over_pi\
-	man/takum_linear16_arctan2_over_pi\
-	man/takum_linear32_arctan2_over_pi\
-	man/takum_linear64_arctan2_over_pi\
+	man/takum_log8_arctan2_over_pi\
+	man/takum_log16_arctan2_over_pi\
+	man/takum_log32_arctan2_over_pi\
+	man/takum_log64_arctan2_over_pi\
 	man/takum8_arctan\
 	man/takum16_arctan\
 	man/takum32_arctan\
 	man/takum64_arctan\
-	man/takum_linear8_arctan\
-	man/takum_linear16_arctan\
-	man/takum_linear32_arctan\
-	man/takum_linear64_arctan\
+	man/takum_log8_arctan\
+	man/takum_log16_arctan\
+	man/takum_log32_arctan\
+	man/takum_log64_arctan\
 	man/takum8_arctan_over_pi\
 	man/takum16_arctan_over_pi\
 	man/takum32_arctan_over_pi\
 	man/takum64_arctan_over_pi\
-	man/takum_linear8_arctan_over_pi\
-	man/takum_linear16_arctan_over_pi\
-	man/takum_linear32_arctan_over_pi\
-	man/takum_linear64_arctan_over_pi\
+	man/takum_log8_arctan_over_pi\
+	man/takum_log16_arctan_over_pi\
+	man/takum_log32_arctan_over_pi\
+	man/takum_log64_arctan_over_pi\
 	man/takum8_arsech\
 	man/takum16_arsech\
 	man/takum32_arsech\
 	man/takum64_arsech\
-	man/takum_linear8_arsech\
-	man/takum_linear16_arsech\
-	man/takum_linear32_arsech\
-	man/takum_linear64_arsech\
+	man/takum_log8_arsech\
+	man/takum_log16_arsech\
+	man/takum_log32_arsech\
+	man/takum_log64_arsech\
 	man/takum8_arsinh\
 	man/takum16_arsinh\
 	man/takum32_arsinh\
 	man/takum64_arsinh\
-	man/takum_linear8_arsinh\
-	man/takum_linear16_arsinh\
-	man/takum_linear32_arsinh\
-	man/takum_linear64_arsinh\
+	man/takum_log8_arsinh\
+	man/takum_log16_arsinh\
+	man/takum_log32_arsinh\
+	man/takum_log64_arsinh\
 	man/takum8_artanh\
 	man/takum16_artanh\
 	man/takum32_artanh\
 	man/takum64_artanh\
-	man/takum_linear8_artanh\
-	man/takum_linear16_artanh\
-	man/takum_linear32_artanh\
-	man/takum_linear64_artanh\
+	man/takum_log8_artanh\
+	man/takum_log16_artanh\
+	man/takum_log32_artanh\
+	man/takum_log64_artanh\
 	man/takum8_cos\
 	man/takum16_cos\
 	man/takum32_cos\
 	man/takum64_cos\
-	man/takum_linear8_cos\
-	man/takum_linear16_cos\
-	man/takum_linear32_cos\
-	man/takum_linear64_cos\
+	man/takum_log8_cos\
+	man/takum_log16_cos\
+	man/takum_log32_cos\
+	man/takum_log64_cos\
 	man/takum8_cos_pi_times\
 	man/takum16_cos_pi_times\
 	man/takum32_cos_pi_times\
 	man/takum64_cos_pi_times\
-	man/takum_linear8_cos_pi_times\
-	man/takum_linear16_cos_pi_times\
-	man/takum_linear32_cos_pi_times\
-	man/takum_linear64_cos_pi_times\
+	man/takum_log8_cos_pi_times\
+	man/takum_log16_cos_pi_times\
+	man/takum_log32_cos_pi_times\
+	man/takum_log64_cos_pi_times\
 	man/takum8_cosh\
 	man/takum16_cosh\
 	man/takum32_cosh\
 	man/takum64_cosh\
-	man/takum_linear8_cosh\
-	man/takum_linear16_cosh\
-	man/takum_linear32_cosh\
-	man/takum_linear64_cosh\
+	man/takum_log8_cosh\
+	man/takum_log16_cosh\
+	man/takum_log32_cosh\
+	man/takum_log64_cosh\
 	man/takum8_cot\
 	man/takum16_cot\
 	man/takum32_cot\
 	man/takum64_cot\
-	man/takum_linear8_cot\
-	man/takum_linear16_cot\
-	man/takum_linear32_cot\
-	man/takum_linear64_cot\
+	man/takum_log8_cot\
+	man/takum_log16_cot\
+	man/takum_log32_cot\
+	man/takum_log64_cot\
 	man/takum8_cot_pi_times\
 	man/takum16_cot_pi_times\
 	man/takum32_cot_pi_times\
 	man/takum64_cot_pi_times\
-	man/takum_linear8_cot_pi_times\
-	man/takum_linear16_cot_pi_times\
-	man/takum_linear32_cot_pi_times\
-	man/takum_linear64_cot_pi_times\
+	man/takum_log8_cot_pi_times\
+	man/takum_log16_cot_pi_times\
+	man/takum_log32_cot_pi_times\
+	man/takum_log64_cot_pi_times\
 	man/takum8_coth\
 	man/takum16_coth\
 	man/takum32_coth\
 	man/takum64_coth\
-	man/takum_linear8_coth\
-	man/takum_linear16_coth\
-	man/takum_linear32_coth\
-	man/takum_linear64_coth\
+	man/takum_log8_coth\
+	man/takum_log16_coth\
+	man/takum_log32_coth\
+	man/takum_log64_coth\
 	man/takum8_csc\
 	man/takum16_csc\
 	man/takum32_csc\
 	man/takum64_csc\
-	man/takum_linear8_csc\
-	man/takum_linear16_csc\
-	man/takum_linear32_csc\
-	man/takum_linear64_csc\
+	man/takum_log8_csc\
+	man/takum_log16_csc\
+	man/takum_log32_csc\
+	man/takum_log64_csc\
 	man/takum8_csc_pi_times\
 	man/takum16_csc_pi_times\
 	man/takum32_csc_pi_times\
 	man/takum64_csc_pi_times\
-	man/takum_linear8_csc_pi_times\
-	man/takum_linear16_csc_pi_times\
-	man/takum_linear32_csc_pi_times\
-	man/takum_linear64_csc_pi_times\
+	man/takum_log8_csc_pi_times\
+	man/takum_log16_csc_pi_times\
+	man/takum_log32_csc_pi_times\
+	man/takum_log64_csc_pi_times\
 	man/takum8_csch\
 	man/takum16_csch\
 	man/takum32_csch\
 	man/takum64_csch\
-	man/takum_linear8_csch\
-	man/takum_linear16_csch\
-	man/takum_linear32_csch\
-	man/takum_linear64_csch\
+	man/takum_log8_csch\
+	man/takum_log16_csch\
+	man/takum_log32_csch\
+	man/takum_log64_csch\
 	man/takum8_division\
 	man/takum16_division\
 	man/takum32_division\
 	man/takum64_division\
-	man/takum_linear8_division\
-	man/takum_linear16_division\
-	man/takum_linear32_division\
-	man/takum_linear64_division\
+	man/takum_log8_division\
+	man/takum_log16_division\
+	man/takum_log32_division\
+	man/takum_log64_division\
 	man/takum8_exp\
 	man/takum16_exp\
 	man/takum32_exp\
 	man/takum64_exp\
-	man/takum_linear8_exp\
-	man/takum_linear16_exp\
-	man/takum_linear32_exp\
-	man/takum_linear64_exp\
+	man/takum_log8_exp\
+	man/takum_log16_exp\
+	man/takum_log32_exp\
+	man/takum_log64_exp\
 	man/takum8_exp_minus_1\
 	man/takum16_exp_minus_1\
 	man/takum32_exp_minus_1\
 	man/takum64_exp_minus_1\
-	man/takum_linear8_exp_minus_1\
-	man/takum_linear16_exp_minus_1\
-	man/takum_linear32_exp_minus_1\
-	man/takum_linear64_exp_minus_1\
+	man/takum_log8_exp_minus_1\
+	man/takum_log16_exp_minus_1\
+	man/takum_log32_exp_minus_1\
+	man/takum_log64_exp_minus_1\
 	man/takum8_from_extended_float\
 	man/takum16_from_extended_float\
 	man/takum32_from_extended_float\
 	man/takum64_from_extended_float\
-	man/takum_linear8_from_extended_float\
-	man/takum_linear16_from_extended_float\
-	man/takum_linear32_from_extended_float\
-	man/takum_linear64_from_extended_float\
+	man/takum_log8_from_extended_float\
+	man/takum_log16_from_extended_float\
+	man/takum_log32_from_extended_float\
+	man/takum_log64_from_extended_float\
 	man/takum8_from_float32\
 	man/takum16_from_float32\
 	man/takum32_from_float32\
 	man/takum64_from_float32\
-	man/takum_linear8_from_float32\
-	man/takum_linear16_from_float32\
-	man/takum_linear32_from_float32\
-	man/takum_linear64_from_float32\
+	man/takum_log8_from_float32\
+	man/takum_log16_from_float32\
+	man/takum_log32_from_float32\
+	man/takum_log64_from_float32\
 	man/takum8_from_float64\
 	man/takum16_from_float64\
 	man/takum32_from_float64\
 	man/takum64_from_float64\
-	man/takum_linear8_from_float64\
-	man/takum_linear16_from_float64\
-	man/takum_linear32_from_float64\
-	man/takum_linear64_from_float64\
+	man/takum_log8_from_float64\
+	man/takum_log16_from_float64\
+	man/takum_log32_from_float64\
+	man/takum_log64_from_float64\
 	man/takum16_from_takum8\
 	man/takum32_from_takum8\
 	man/takum64_from_takum8\
-	man/takum_linear8_from_takum8\
-	man/takum_linear16_from_takum8\
-	man/takum_linear32_from_takum8\
-	man/takum_linear64_from_takum8\
+	man/takum_log8_from_takum8\
+	man/takum_log16_from_takum8\
+	man/takum_log32_from_takum8\
+	man/takum_log64_from_takum8\
 	man/takum8_from_takum16\
 	man/takum32_from_takum16\
 	man/takum64_from_takum16\
-	man/takum_linear8_from_takum16\
-	man/takum_linear16_from_takum16\
-	man/takum_linear32_from_takum16\
-	man/takum_linear64_from_takum16\
+	man/takum_log8_from_takum16\
+	man/takum_log16_from_takum16\
+	man/takum_log32_from_takum16\
+	man/takum_log64_from_takum16\
 	man/takum8_from_takum32\
 	man/takum16_from_takum32\
 	man/takum64_from_takum32\
-	man/takum_linear8_from_takum32\
-	man/takum_linear16_from_takum32\
-	man/takum_linear32_from_takum32\
-	man/takum_linear64_from_takum32\
+	man/takum_log8_from_takum32\
+	man/takum_log16_from_takum32\
+	man/takum_log32_from_takum32\
+	man/takum_log64_from_takum32\
 	man/takum8_from_takum64\
 	man/takum16_from_takum64\
 	man/takum32_from_takum64\
-	man/takum_linear8_from_takum64\
-	man/takum_linear16_from_takum64\
-	man/takum_linear32_from_takum64\
-	man/takum_linear64_from_takum64\
-	man/takum8_from_takum_linear8\
-	man/takum16_from_takum_linear8\
-	man/takum32_from_takum_linear8\
-	man/takum64_from_takum_linear8\
-	man/takum_linear16_from_takum_linear8\
-	man/takum_linear32_from_takum_linear8\
-	man/takum_linear64_from_takum_linear8\
-	man/takum8_from_takum_linear16\
-	man/takum16_from_takum_linear16\
-	man/takum32_from_takum_linear16\
-	man/takum64_from_takum_linear16\
-	man/takum_linear8_from_takum_linear16\
-	man/takum_linear32_from_takum_linear16\
-	man/takum_linear64_from_takum_linear16\
-	man/takum8_from_takum_linear32\
-	man/takum16_from_takum_linear32\
-	man/takum32_from_takum_linear32\
-	man/takum64_from_takum_linear32\
-	man/takum_linear8_from_takum_linear32\
-	man/takum_linear16_from_takum_linear32\
-	man/takum_linear64_from_takum_linear32\
-	man/takum8_from_takum_linear64\
-	man/takum16_from_takum_linear64\
-	man/takum32_from_takum_linear64\
-	man/takum64_from_takum_linear64\
-	man/takum_linear8_from_takum_linear64\
-	man/takum_linear16_from_takum_linear64\
-	man/takum_linear32_from_takum_linear64\
+	man/takum_log8_from_takum64\
+	man/takum_log16_from_takum64\
+	man/takum_log32_from_takum64\
+	man/takum_log64_from_takum64\
+	man/takum8_from_takum_log8\
+	man/takum16_from_takum_log8\
+	man/takum32_from_takum_log8\
+	man/takum64_from_takum_log8\
+	man/takum_log16_from_takum_log8\
+	man/takum_log32_from_takum_log8\
+	man/takum_log64_from_takum_log8\
+	man/takum8_from_takum_log16\
+	man/takum16_from_takum_log16\
+	man/takum32_from_takum_log16\
+	man/takum64_from_takum_log16\
+	man/takum_log8_from_takum_log16\
+	man/takum_log32_from_takum_log16\
+	man/takum_log64_from_takum_log16\
+	man/takum8_from_takum_log32\
+	man/takum16_from_takum_log32\
+	man/takum32_from_takum_log32\
+	man/takum64_from_takum_log32\
+	man/takum_log8_from_takum_log32\
+	man/takum_log16_from_takum_log32\
+	man/takum_log64_from_takum_log32\
+	man/takum8_from_takum_log64\
+	man/takum16_from_takum_log64\
+	man/takum32_from_takum_log64\
+	man/takum64_from_takum_log64\
+	man/takum_log8_from_takum_log64\
+	man/takum_log16_from_takum_log64\
+	man/takum_log32_from_takum_log64\
 	man/takum8_hypotenuse\
 	man/takum16_hypotenuse\
 	man/takum32_hypotenuse\
 	man/takum64_hypotenuse\
-	man/takum_linear8_hypotenuse\
-	man/takum_linear16_hypotenuse\
-	man/takum_linear32_hypotenuse\
-	man/takum_linear64_hypotenuse\
+	man/takum_log8_hypotenuse\
+	man/takum_log16_hypotenuse\
+	man/takum_log32_hypotenuse\
+	man/takum_log64_hypotenuse\
 	man/takum8_integer_power\
 	man/takum16_integer_power\
 	man/takum32_integer_power\
 	man/takum64_integer_power\
-	man/takum_linear8_integer_power\
-	man/takum_linear16_integer_power\
-	man/takum_linear32_integer_power\
-	man/takum_linear64_integer_power\
+	man/takum_log8_integer_power\
+	man/takum_log16_integer_power\
+	man/takum_log32_integer_power\
+	man/takum_log64_integer_power\
 	man/takum8_inversion\
 	man/takum16_inversion\
 	man/takum32_inversion\
 	man/takum64_inversion\
-	man/takum_linear8_inversion\
-	man/takum_linear16_inversion\
-	man/takum_linear32_inversion\
-	man/takum_linear64_inversion\
+	man/takum_log8_inversion\
+	man/takum_log16_inversion\
+	man/takum_log32_inversion\
+	man/takum_log64_inversion\
 	man/takum8_lb\
 	man/takum16_lb\
 	man/takum32_lb\
 	man/takum64_lb\
-	man/takum_linear8_lb\
-	man/takum_linear16_lb\
-	man/takum_linear32_lb\
-	man/takum_linear64_lb\
+	man/takum_log8_lb\
+	man/takum_log16_lb\
+	man/takum_log32_lb\
+	man/takum_log64_lb\
 	man/takum8_lb_1_plus\
 	man/takum16_lb_1_plus\
 	man/takum32_lb_1_plus\
 	man/takum64_lb_1_plus\
-	man/takum_linear8_lb_1_plus\
-	man/takum_linear16_lb_1_plus\
-	man/takum_linear32_lb_1_plus\
-	man/takum_linear64_lb_1_plus\
+	man/takum_log8_lb_1_plus\
+	man/takum_log16_lb_1_plus\
+	man/takum_log32_lb_1_plus\
+	man/takum_log64_lb_1_plus\
 	man/takum8_lg\
 	man/takum16_lg\
 	man/takum32_lg\
 	man/takum64_lg\
-	man/takum_linear8_lg\
-	man/takum_linear16_lg\
-	man/takum_linear32_lg\
-	man/takum_linear64_lg\
+	man/takum_log8_lg\
+	man/takum_log16_lg\
+	man/takum_log32_lg\
+	man/takum_log64_lg\
 	man/takum8_lg_1_plus\
 	man/takum16_lg_1_plus\
 	man/takum32_lg_1_plus\
 	man/takum64_lg_1_plus\
-	man/takum_linear8_lg_1_plus\
-	man/takum_linear16_lg_1_plus\
-	man/takum_linear32_lg_1_plus\
-	man/takum_linear64_lg_1_plus\
+	man/takum_log8_lg_1_plus\
+	man/takum_log16_lg_1_plus\
+	man/takum_log32_lg_1_plus\
+	man/takum_log64_lg_1_plus\
 	man/takum8_ln\
 	man/takum16_ln\
 	man/takum32_ln\
 	man/takum64_ln\
-	man/takum_linear8_ln\
-	man/takum_linear16_ln\
-	man/takum_linear32_ln\
-	man/takum_linear64_ln\
+	man/takum_log8_ln\
+	man/takum_log16_ln\
+	man/takum_log32_ln\
+	man/takum_log64_ln\
 	man/takum8_ln_1_plus\
 	man/takum16_ln_1_plus\
 	man/takum32_ln_1_plus\
 	man/takum64_ln_1_plus\
-	man/takum_linear8_ln_1_plus\
-	man/takum_linear16_ln_1_plus\
-	man/takum_linear32_ln_1_plus\
-	man/takum_linear64_ln_1_plus\
+	man/takum_log8_ln_1_plus\
+	man/takum_log16_ln_1_plus\
+	man/takum_log32_ln_1_plus\
+	man/takum_log64_ln_1_plus\
 	man/takum8_multiplication\
 	man/takum16_multiplication\
 	man/takum32_multiplication\
 	man/takum64_multiplication\
-	man/takum_linear8_multiplication\
-	man/takum_linear16_multiplication\
-	man/takum_linear32_multiplication\
-	man/takum_linear64_multiplication\
+	man/takum_log8_multiplication\
+	man/takum_log16_multiplication\
+	man/takum_log32_multiplication\
+	man/takum_log64_multiplication\
 	man/takum8_power\
 	man/takum16_power\
 	man/takum32_power\
 	man/takum64_power\
-	man/takum_linear8_power\
-	man/takum_linear16_power\
-	man/takum_linear32_power\
-	man/takum_linear64_power\
+	man/takum_log8_power\
+	man/takum_log16_power\
+	man/takum_log32_power\
+	man/takum_log64_power\
 	man/takum8_precision\
 	man/takum16_precision\
 	man/takum32_precision\
 	man/takum64_precision\
-	man/takum_linear8_precision\
-	man/takum_linear16_precision\
-	man/takum_linear32_precision\
-	man/takum_linear64_precision\
+	man/takum_log8_precision\
+	man/takum_log16_precision\
+	man/takum_log32_precision\
+	man/takum_log64_precision\
 	man/takum8_root\
 	man/takum16_root\
 	man/takum32_root\
 	man/takum64_root\
-	man/takum_linear8_root\
-	man/takum_linear16_root\
-	man/takum_linear32_root\
-	man/takum_linear64_root\
+	man/takum_log8_root\
+	man/takum_log16_root\
+	man/takum_log32_root\
+	man/takum_log64_root\
 	man/takum8_sec\
 	man/takum16_sec\
 	man/takum32_sec\
 	man/takum64_sec\
-	man/takum_linear8_sec\
-	man/takum_linear16_sec\
-	man/takum_linear32_sec\
-	man/takum_linear64_sec\
+	man/takum_log8_sec\
+	man/takum_log16_sec\
+	man/takum_log32_sec\
+	man/takum_log64_sec\
 	man/takum8_sec_pi_times\
 	man/takum16_sec_pi_times\
 	man/takum32_sec_pi_times\
 	man/takum64_sec_pi_times\
-	man/takum_linear8_sec_pi_times\
-	man/takum_linear16_sec_pi_times\
-	man/takum_linear32_sec_pi_times\
-	man/takum_linear64_sec_pi_times\
+	man/takum_log8_sec_pi_times\
+	man/takum_log16_sec_pi_times\
+	man/takum_log32_sec_pi_times\
+	man/takum_log64_sec_pi_times\
 	man/takum8_sech\
 	man/takum16_sech\
 	man/takum32_sech\
 	man/takum64_sech\
-	man/takum_linear8_sech\
-	man/takum_linear16_sech\
-	man/takum_linear32_sech\
-	man/takum_linear64_sech\
+	man/takum_log8_sech\
+	man/takum_log16_sech\
+	man/takum_log32_sech\
+	man/takum_log64_sech\
 	man/takum8_sign\
 	man/takum16_sign\
 	man/takum32_sign\
 	man/takum64_sign\
-	man/takum_linear8_sign\
-	man/takum_linear16_sign\
-	man/takum_linear32_sign\
-	man/takum_linear64_sign\
+	man/takum_log8_sign\
+	man/takum_log16_sign\
+	man/takum_log32_sign\
+	man/takum_log64_sign\
 	man/takum8_sin\
 	man/takum16_sin\
 	man/takum32_sin\
 	man/takum64_sin\
-	man/takum_linear8_sin\
-	man/takum_linear16_sin\
-	man/takum_linear32_sin\
-	man/takum_linear64_sin\
+	man/takum_log8_sin\
+	man/takum_log16_sin\
+	man/takum_log32_sin\
+	man/takum_log64_sin\
 	man/takum8_sin_pi_times\
 	man/takum16_sin_pi_times\
 	man/takum32_sin_pi_times\
 	man/takum64_sin_pi_times\
-	man/takum_linear8_sin_pi_times\
-	man/takum_linear16_sin_pi_times\
-	man/takum_linear32_sin_pi_times\
-	man/takum_linear64_sin_pi_times\
+	man/takum_log8_sin_pi_times\
+	man/takum_log16_sin_pi_times\
+	man/takum_log32_sin_pi_times\
+	man/takum_log64_sin_pi_times\
 	man/takum8_sinh\
 	man/takum16_sinh\
 	man/takum32_sinh\
 	man/takum64_sinh\
-	man/takum_linear8_sinh\
-	man/takum_linear16_sinh\
-	man/takum_linear32_sinh\
-	man/takum_linear64_sinh\
+	man/takum_log8_sinh\
+	man/takum_log16_sinh\
+	man/takum_log32_sinh\
+	man/takum_log64_sinh\
 	man/takum8_square_root\
 	man/takum16_square_root\
 	man/takum32_square_root\
 	man/takum64_square_root\
-	man/takum_linear8_square_root\
-	man/takum_linear16_square_root\
-	man/takum_linear32_square_root\
-	man/takum_linear64_square_root\
+	man/takum_log8_square_root\
+	man/takum_log16_square_root\
+	man/takum_log32_square_root\
+	man/takum_log64_square_root\
 	man/takum8_subtraction\
 	man/takum16_subtraction\
 	man/takum32_subtraction\
 	man/takum64_subtraction\
-	man/takum_linear8_subtraction\
-	man/takum_linear16_subtraction\
-	man/takum_linear32_subtraction\
-	man/takum_linear64_subtraction\
+	man/takum_log8_subtraction\
+	man/takum_log16_subtraction\
+	man/takum_log32_subtraction\
+	man/takum_log64_subtraction\
 	man/takum8_tan\
 	man/takum16_tan\
 	man/takum32_tan\
 	man/takum64_tan\
-	man/takum_linear8_tan\
-	man/takum_linear16_tan\
-	man/takum_linear32_tan\
-	man/takum_linear64_tan\
+	man/takum_log8_tan\
+	man/takum_log16_tan\
+	man/takum_log32_tan\
+	man/takum_log64_tan\
 	man/takum8_tan_pi_times\
 	man/takum16_tan_pi_times\
 	man/takum32_tan_pi_times\
 	man/takum64_tan_pi_times\
-	man/takum_linear8_tan_pi_times\
-	man/takum_linear16_tan_pi_times\
-	man/takum_linear32_tan_pi_times\
-	man/takum_linear64_tan_pi_times\
+	man/takum_log8_tan_pi_times\
+	man/takum_log16_tan_pi_times\
+	man/takum_log32_tan_pi_times\
+	man/takum_log64_tan_pi_times\
 	man/takum8_tanh\
 	man/takum16_tanh\
 	man/takum32_tanh\
 	man/takum64_tanh\
-	man/takum_linear8_tanh\
-	man/takum_linear16_tanh\
-	man/takum_linear32_tanh\
-	man/takum_linear64_tanh\
+	man/takum_log8_tanh\
+	man/takum_log16_tanh\
+	man/takum_log32_tanh\
+	man/takum_log64_tanh\
 	man/takum8_to_extended_float\
 	man/takum16_to_extended_float\
 	man/takum32_to_extended_float\
 	man/takum64_to_extended_float\
-	man/takum_linear8_to_extended_float\
-	man/takum_linear16_to_extended_float\
-	man/takum_linear32_to_extended_float\
-	man/takum_linear64_to_extended_float\
+	man/takum_log8_to_extended_float\
+	man/takum_log16_to_extended_float\
+	man/takum_log32_to_extended_float\
+	man/takum_log64_to_extended_float\
 	man/takum8_to_float32\
 	man/takum16_to_float32\
 	man/takum32_to_float32\
 	man/takum64_to_float32\
-	man/takum_linear8_to_float32\
-	man/takum_linear16_to_float32\
-	man/takum_linear32_to_float32\
-	man/takum_linear64_to_float32\
+	man/takum_log8_to_float32\
+	man/takum_log16_to_float32\
+	man/takum_log32_to_float32\
+	man/takum_log64_to_float32\
 	man/takum8_to_float64\
 	man/takum16_to_float64\
 	man/takum32_to_float64\
 	man/takum64_to_float64\
-	man/takum_linear8_to_float64\
-	man/takum_linear16_to_float64\
-	man/takum_linear32_to_float64\
-	man/takum_linear64_to_float64\
+	man/takum_log8_to_float64\
+	man/takum_log16_to_float64\
+	man/takum_log32_to_float64\
+	man/takum_log64_to_float64\
 
 MAN7 = man/libtakum
 

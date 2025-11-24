@@ -24,7 +24,7 @@ csc(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(csc, csc, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(csc, csc, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(csc, csc, RESULT_FIXER_MACRO)
 
 static long double
 csc_pi_timesl(long double f)
@@ -53,5 +53,5 @@ csc_pi_times(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(csc_pi_times, csc_pi_times, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(csc_pi_times, csc_pi_times,
-                                      RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(csc_pi_times, csc_pi_times,
+                                   RESULT_FIXER_MACRO)

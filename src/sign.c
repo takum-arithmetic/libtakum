@@ -39,38 +39,38 @@ takum64_sign(takum64 t)
 	                            0;
 }
 
-takum_linear8
-takum_linear8_sign(takum_linear8 t)
+takum_log8
+takum_log8_sign(takum_log8 t)
 {
-	return (t == TAKUM_LINEAR8_NAR) ? TAKUM_LINEAR8_NAR :
-	       (t < 0)                  ? -TAKUM_LINEAR8_ONE :
-	       (t > 0)                  ? TAKUM_LINEAR8_ONE :
-	                                  0;
+	return (t == TAKUM_LOG8_NAR) ? TAKUM_LOG8_NAR :
+	       (t < 0)               ? -TAKUM_LOG8_ONE :
+	       (t > 0)               ? TAKUM_LOG8_ONE :
+	                               0;
 }
 
-takum_linear16
-takum_linear16_sign(takum_linear16 t)
+takum_log16
+takum_log16_sign(takum_log16 t)
 {
-	return (t == TAKUM_LINEAR16_NAR) ? TAKUM_LINEAR16_NAR :
-	       (t < 0)                   ? -TAKUM_LINEAR16_ONE :
-	       (t > 0)                   ? TAKUM_LINEAR16_ONE :
-	                                   0;
+	return (t == TAKUM_LOG16_NAR) ? TAKUM_LOG16_NAR :
+	       (t < 0)                ? -TAKUM_LOG16_ONE :
+	       (t > 0)                ? TAKUM_LOG16_ONE :
+	                                0;
 }
 
-takum_linear32
-takum_linear32_sign(takum_linear32 t)
+takum_log32
+takum_log32_sign(takum_log32 t)
 {
-	return (t == TAKUM_LINEAR32_NAR) ? TAKUM_LINEAR32_NAR :
-	       (t < 0)                   ? -TAKUM_LINEAR32_ONE :
-	       (t > 0)                   ? TAKUM_LINEAR32_ONE :
-	                                   0;
+	return (t == TAKUM_LOG32_NAR) ? TAKUM_LOG32_NAR :
+	       (t < 0)                ? -TAKUM_LOG32_ONE :
+	       (t > 0)                ? TAKUM_LOG32_ONE :
+	                                0;
 }
 
-takum_linear64
-takum_linear64_sign(takum_linear64 t)
+takum_log64
+takum_log64_sign(takum_log64 t)
 {
-	return (t == TAKUM_LINEAR64_NAR) ? TAKUM_LINEAR64_NAR :
-	       (t < 0)                   ? -TAKUM_LINEAR64_ONE :
-	       (t > 0)                   ? TAKUM_LINEAR64_ONE :
-	                                   0;
+	return (t == TAKUM_LOG64_NAR) ? TAKUM_LOG64_NAR :
+	       (t < 0)                ? -TAKUM_LOG64_ONE :
+	       (t > 0)                ? TAKUM_LOG64_ONE :
+	                                0;
 }

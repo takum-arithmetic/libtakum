@@ -19,10 +19,10 @@ static const struct unit_test_block addition_utb = {
 		.takum16_function   = takum16_addition,
 		.takum32_function   = takum32_addition,
 		.takum64_function   = takum64_addition,
-		.takum_linear8_function    = takum_linear8_addition,
-		.takum_linear16_function   = takum_linear16_addition,
-		.takum_linear32_function   = takum_linear32_addition,
-		.takum_linear64_function   = takum_linear64_addition,
+		.takum_log8_function    = takum_log8_addition,
+		.takum_log16_function   = takum_log16_addition,
+		.takum_log32_function   = takum_log32_addition,
+		.takum_log64_function   = takum_log64_addition,
 	},
 };
 

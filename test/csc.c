@@ -19,10 +19,10 @@ static const struct unit_test_block csc_utb = {
 		.takum16_function   = takum16_csc,
 		.takum32_function   = takum32_csc,
 		.takum64_function   = takum64_csc,
-		.takum_linear8_function    = takum_linear8_csc,
-		.takum_linear16_function   = takum_linear16_csc,
-		.takum_linear32_function   = takum_linear32_csc,
-		.takum_linear64_function   = takum_linear64_csc,
+		.takum_log8_function    = takum_log8_csc,
+		.takum_log16_function   = takum_log16_csc,
+		.takum_log32_function   = takum_log32_csc,
+		.takum_log64_function   = takum_log64_csc,
 	},
 };
 
@@ -55,10 +55,10 @@ static const struct unit_test_block csc_pi_times_utb = {
 		.takum16_function   = takum16_csc_pi_times,
 		.takum32_function   = takum32_csc_pi_times,
 		.takum64_function   = takum64_csc_pi_times,
-		.takum_linear8_function    = takum_linear8_csc_pi_times,
-		.takum_linear16_function   = takum_linear16_csc_pi_times,
-		.takum_linear32_function   = takum_linear32_csc_pi_times,
-		.takum_linear64_function   = takum_linear64_csc_pi_times,
+		.takum_log8_function    = takum_log8_csc_pi_times,
+		.takum_log16_function   = takum_log16_csc_pi_times,
+		.takum_log32_function   = takum_log32_csc_pi_times,
+		.takum_log64_function   = takum_log64_csc_pi_times,
 	},
 };
 

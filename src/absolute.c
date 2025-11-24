@@ -27,26 +27,26 @@ takum64_absolute(takum64 t)
 	return (t < 0) * (-t) + (t >= 0) * t;
 }
 
-takum_linear8
-takum_linear8_absolute(takum_linear8 t)
+takum_log8
+takum_log8_absolute(takum_log8 t)
 {
 	return (t < 0) * (-t) + (t >= 0) * t;
 }
 
-takum_linear16
-takum_linear16_absolute(takum_linear16 t)
+takum_log16
+takum_log16_absolute(takum_log16 t)
 {
 	return (t < 0) * (-t) + (t >= 0) * t;
 }
 
-takum_linear32
-takum_linear32_absolute(takum_linear32 t)
+takum_log32
+takum_log32_absolute(takum_log32 t)
 {
 	return (t < 0) * (-t) + (t >= 0) * t;
 }
 
-takum_linear64
-takum_linear64_absolute(takum_linear64 t)
+takum_log64
+takum_log64_absolute(takum_log64 t)
 {
 	return (t < 0) * (-t) + (t >= 0) * t;
 }

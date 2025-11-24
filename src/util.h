@@ -25,29 +25,23 @@
                                        RESULT_FIXER_MACRO)                     \
 	takum8 takum8_##NAME(takum8 t)                                         \
 	{                                                                      \
-		long double arg = takum8_to_extended_float(t),                 \
-			    res = FLOAT_FUNCTION##l(arg);                      \
+		double arg = takum8_to_float64(t), res = FLOAT_FUNCTION(arg);  \
                                                                                \
-		return takum8_from_extended_float(                             \
-			RESULT_FIXER_MACRO(arg, res));                         \
+		return takum8_from_float64(RESULT_FIXER_MACRO(arg, res));      \
 	}                                                                      \
                                                                                \
 	takum16 takum16_##NAME(takum16 t)                                      \
 	{                                                                      \
-		long double arg = takum16_to_extended_float(t),                \
-			    res = FLOAT_FUNCTION##l(arg);                      \
+		double arg = takum16_to_float64(t), res = FLOAT_FUNCTION(arg); \
                                                                                \
-		return takum16_from_extended_float(                            \
-			RESULT_FIXER_MACRO(arg, res));                         \
+		return takum16_from_float64(RESULT_FIXER_MACRO(arg, res));     \
 	}                                                                      \
                                                                                \
 	takum32 takum32_##NAME(takum32 t)                                      \
 	{                                                                      \
-		long double arg = takum32_to_extended_float(t),                \
-			    res = FLOAT_FUNCTION##l(arg);                      \
+		double arg = takum32_to_float64(t), res = FLOAT_FUNCTION(arg); \
                                                                                \
-		return takum32_from_extended_float(                            \
-			RESULT_FIXER_MACRO(arg, res));                         \
+		return takum32_from_float64(RESULT_FIXER_MACRO(arg, res));     \
 	}                                                                      \
                                                                                \
 	takum64 takum64_##NAME(takum64 t)                                      \
@@ -59,41 +53,41 @@
 			RESULT_FIXER_MACRO(arg, res));                         \
 	}
 
-#define UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(NAME, FLOAT_FUNCTION,            \
-                                              RESULT_FIXER_MACRO)              \
-	takum_linear8 takum_linear8_##NAME(takum_linear8 t)                    \
+#define UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(NAME, FLOAT_FUNCTION,               \
+                                           RESULT_FIXER_MACRO)                 \
+	takum_log8 takum_log8_##NAME(takum_log8 t)                             \
 	{                                                                      \
-		double arg = takum_linear8_to_float64(t),                      \
-		       res = FLOAT_FUNCTION(arg);                              \
-                                                                               \
-		return takum_linear8_from_float64(                             \
-			RESULT_FIXER_MACRO(arg, res));                         \
-	}                                                                      \
-                                                                               \
-	takum_linear16 takum_linear16_##NAME(takum_linear16 t)                 \
-	{                                                                      \
-		double arg = takum_linear16_to_float64(t),                     \
-		       res = FLOAT_FUNCTION(arg);                              \
-                                                                               \
-		return takum_linear16_from_float64(                            \
-			RESULT_FIXER_MACRO(arg, res));                         \
-	}                                                                      \
-                                                                               \
-	takum_linear32 takum_linear32_##NAME(takum_linear32 t)                 \
-	{                                                                      \
-		double arg = takum_linear32_to_float64(t),                     \
-		       res = FLOAT_FUNCTION(arg);                              \
-                                                                               \
-		return takum_linear32_from_float64(                            \
-			RESULT_FIXER_MACRO(arg, res));                         \
-	}                                                                      \
-                                                                               \
-	takum_linear64 takum_linear64_##NAME(takum_linear64 t)                 \
-	{                                                                      \
-		long double arg = takum_linear64_to_extended_float(t),         \
+		long double arg = takum_log8_to_extended_float(t),             \
 			    res = FLOAT_FUNCTION##l(arg);                      \
                                                                                \
-		return takum_linear64_from_extended_float(                     \
+		return takum_log8_from_extended_float(                         \
+			RESULT_FIXER_MACRO(arg, res));                         \
+	}                                                                      \
+                                                                               \
+	takum_log16 takum_log16_##NAME(takum_log16 t)                          \
+	{                                                                      \
+		long double arg = takum_log16_to_extended_float(t),            \
+			    res = FLOAT_FUNCTION##l(arg);                      \
+                                                                               \
+		return takum_log16_from_extended_float(                        \
+			RESULT_FIXER_MACRO(arg, res));                         \
+	}                                                                      \
+                                                                               \
+	takum_log32 takum_log32_##NAME(takum_log32 t)                          \
+	{                                                                      \
+		long double arg = takum_log32_to_extended_float(t),            \
+			    res = FLOAT_FUNCTION##l(arg);                      \
+                                                                               \
+		return takum_log32_from_extended_float(                        \
+			RESULT_FIXER_MACRO(arg, res));                         \
+	}                                                                      \
+                                                                               \
+	takum_log64 takum_log64_##NAME(takum_log64 t)                          \
+	{                                                                      \
+		long double arg = takum_log64_to_extended_float(t),            \
+			    res = FLOAT_FUNCTION##l(arg);                      \
+                                                                               \
+		return takum_log64_from_extended_float(                        \
 			RESULT_FIXER_MACRO(arg, res));                         \
 	}
 
@@ -101,38 +95,35 @@
                                         RESULT_FIXER_MACRO)                    \
 	takum8 takum8_##NAME(takum8 a, takum8 b)                               \
 	{                                                                      \
-		long double fa, fb, res;                                       \
+		double fa, fb, res;                                            \
                                                                                \
-		fa = takum8_to_extended_float(a);                              \
-		fb = takum8_to_extended_float(b);                              \
-		res = FLOAT_FUNCTION##l(fa, fb);                               \
+		fa = takum8_to_float64(a);                                     \
+		fb = takum8_to_float64(b);                                     \
+		res = FLOAT_FUNCTION(fa, fb);                                  \
                                                                                \
-		return takum8_from_extended_float(                             \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
+		return takum8_from_float64(RESULT_FIXER_MACRO(fa, fb, res));   \
 	}                                                                      \
                                                                                \
 	takum16 takum16_##NAME(takum16 a, takum16 b)                           \
 	{                                                                      \
-		long double fa, fb, res;                                       \
+		double fa, fb, res;                                            \
                                                                                \
-		fa = takum16_to_extended_float(a);                             \
-		fb = takum16_to_extended_float(b);                             \
-		res = FLOAT_FUNCTION##l(fa, fb);                               \
+		fa = takum16_to_float64(a);                                    \
+		fb = takum16_to_float64(b);                                    \
+		res = FLOAT_FUNCTION(fa, fb);                                  \
                                                                                \
-		return takum16_from_extended_float(                            \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
+		return takum16_from_float64(RESULT_FIXER_MACRO(fa, fb, res));  \
 	}                                                                      \
                                                                                \
 	takum32 takum32_##NAME(takum32 a, takum32 b)                           \
 	{                                                                      \
-		long double fa, fb, res;                                       \
+		double fa, fb, res;                                            \
                                                                                \
-		fa = takum32_to_extended_float(a);                             \
-		fb = takum32_to_extended_float(b);                             \
-		res = FLOAT_FUNCTION##l(fa, fb);                               \
+		fa = takum32_to_float64(a);                                    \
+		fb = takum32_to_float64(b);                                    \
+		res = FLOAT_FUNCTION(fa, fb);                                  \
                                                                                \
-		return takum32_from_extended_float(                            \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
+		return takum32_from_float64(RESULT_FIXER_MACRO(fa, fb, res));  \
 	}                                                                      \
                                                                                \
 	takum64 takum64_##NAME(takum64 a, takum64 b)                           \
@@ -147,56 +138,53 @@
 			RESULT_FIXER_MACRO(fa, fb, res));                      \
 	}
 
-#define UTIL_BINARY_FLOAT_TAKUM_LINEAR_WRAPPER(NAME, FLOAT_FUNCTION,           \
-                                               RESULT_FIXER_MACRO)             \
-	takum_linear8 takum_linear8_##NAME(takum_linear8 a, takum_linear8 b)   \
-	{                                                                      \
-		double fa, fb, res;                                            \
-                                                                               \
-		fa = takum_linear8_to_float64(a);                              \
-		fb = takum_linear8_to_float64(b);                              \
-		res = FLOAT_FUNCTION(fa, fb);                                  \
-                                                                               \
-		return takum_linear8_from_float64(                             \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
-	}                                                                      \
-                                                                               \
-	takum_linear16 takum_linear16_##NAME(takum_linear16 a,                 \
-	                                     takum_linear16 b)                 \
-	{                                                                      \
-		double fa, fb, res;                                            \
-                                                                               \
-		fa = takum_linear16_to_float64(a);                             \
-		fb = takum_linear16_to_float64(b);                             \
-		res = FLOAT_FUNCTION(fa, fb);                                  \
-                                                                               \
-		return takum_linear16_from_float64(                            \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
-	}                                                                      \
-                                                                               \
-	takum_linear32 takum_linear32_##NAME(takum_linear32 a,                 \
-	                                     takum_linear32 b)                 \
-	{                                                                      \
-		double fa, fb, res;                                            \
-                                                                               \
-		fa = takum_linear32_to_float64(a);                             \
-		fb = takum_linear32_to_float64(b);                             \
-		res = FLOAT_FUNCTION(fa, fb);                                  \
-                                                                               \
-		return takum_linear32_from_float64(                            \
-			RESULT_FIXER_MACRO(fa, fb, res));                      \
-	}                                                                      \
-                                                                               \
-	takum_linear64 takum_linear64_##NAME(takum_linear64 a,                 \
-	                                     takum_linear64 b)                 \
+#define UTIL_BINARY_FLOAT_TAKUM_LOG_WRAPPER(NAME, FLOAT_FUNCTION,              \
+                                            RESULT_FIXER_MACRO)                \
+	takum_log8 takum_log8_##NAME(takum_log8 a, takum_log8 b)               \
 	{                                                                      \
 		long double fa, fb, res;                                       \
                                                                                \
-		fa = takum_linear64_to_extended_float(a);                      \
-		fb = takum_linear64_to_extended_float(b);                      \
+		fa = takum_log8_to_extended_float(a);                          \
+		fb = takum_log8_to_extended_float(b);                          \
 		res = FLOAT_FUNCTION##l(fa, fb);                               \
                                                                                \
-		return takum_linear64_from_extended_float(                     \
+		return takum_log8_from_extended_float(                         \
+			RESULT_FIXER_MACRO(fa, fb, res));                      \
+	}                                                                      \
+                                                                               \
+	takum_log16 takum_log16_##NAME(takum_log16 a, takum_log16 b)           \
+	{                                                                      \
+		long double fa, fb, res;                                       \
+                                                                               \
+		fa = takum_log16_to_extended_float(a);                         \
+		fb = takum_log16_to_extended_float(b);                         \
+		res = FLOAT_FUNCTION##l(fa, fb);                               \
+                                                                               \
+		return takum_log16_from_extended_float(                        \
+			RESULT_FIXER_MACRO(fa, fb, res));                      \
+	}                                                                      \
+                                                                               \
+	takum_log32 takum_log32_##NAME(takum_log32 a, takum_log32 b)           \
+	{                                                                      \
+		long double fa, fb, res;                                       \
+                                                                               \
+		fa = takum_log32_to_extended_float(a);                         \
+		fb = takum_log32_to_extended_float(b);                         \
+		res = FLOAT_FUNCTION##l(fa, fb);                               \
+                                                                               \
+		return takum_log32_from_extended_float(                        \
+			RESULT_FIXER_MACRO(fa, fb, res));                      \
+	}                                                                      \
+                                                                               \
+	takum_log64 takum_log64_##NAME(takum_log64 a, takum_log64 b)           \
+	{                                                                      \
+		long double fa, fb, res;                                       \
+                                                                               \
+		fa = takum_log64_to_extended_float(a);                         \
+		fb = takum_log64_to_extended_float(b);                         \
+		res = FLOAT_FUNCTION##l(fa, fb);                               \
+                                                                               \
+		return takum_log64_from_extended_float(                        \
 			RESULT_FIXER_MACRO(fa, fb, res));                      \
 	}
 

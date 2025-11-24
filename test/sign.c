@@ -23,10 +23,10 @@ static const struct unit_test_block sign_utb = {
 		.takum16_function   = takum16_sign,
 		.takum32_function   = takum32_sign,
 		.takum64_function   = takum64_sign,
-		.takum_linear8_function    = takum_linear8_sign,
-		.takum_linear16_function   = takum_linear16_sign,
-		.takum_linear32_function   = takum_linear32_sign,
-		.takum_linear64_function   = takum_linear64_sign,
+		.takum_log8_function    = takum_log8_sign,
+		.takum_log16_function   = takum_log16_sign,
+		.takum_log32_function   = takum_log32_sign,
+		.takum_log64_function   = takum_log64_sign,
 	},
 };
 

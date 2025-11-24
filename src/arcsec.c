@@ -21,7 +21,7 @@ arcsec(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arcsec, arcsec, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arcsec, arcsec, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arcsec, arcsec, RESULT_FIXER_MACRO)
 
 static long double
 arcsec_over_pil(long double f)
@@ -37,5 +37,5 @@ arcsec_over_pi(double f)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arcsec_over_pi, arcsec_over_pi,
                                RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arcsec_over_pi, arcsec_over_pi,
-                                      RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arcsec_over_pi, arcsec_over_pi,
+                                   RESULT_FIXER_MACRO)

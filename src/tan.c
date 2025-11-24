@@ -15,7 +15,7 @@
 #define RESULT_FIXER_MACRO(arg, res) (res)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(tan, tan, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(tan, tan, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(tan, tan, RESULT_FIXER_MACRO)
 
 /*
  * We extend to long double and multiply the argument with pi, returning a
@@ -48,4 +48,4 @@ tanpi(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(tan_pi_times, tanpi, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(tan_pi_times, tanpi, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(tan_pi_times, tanpi, RESULT_FIXER_MACRO)

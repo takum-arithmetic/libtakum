@@ -25,7 +25,7 @@ arccot(double f)
 }
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arccot, arccot, RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arccot, arccot, RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arccot, arccot, RESULT_FIXER_MACRO)
 
 long double
 arccot_over_pil(long double f)
@@ -45,5 +45,5 @@ arccot_over_pi(double f)
 
 UTIL_UNARY_FLOAT_TAKUM_WRAPPER(arccot_over_pi, arccot_over_pi,
                                RESULT_FIXER_MACRO)
-UTIL_UNARY_FLOAT_TAKUM_LINEAR_WRAPPER(arccot_over_pi, arccot_over_pi,
-                                      RESULT_FIXER_MACRO)
+UTIL_UNARY_FLOAT_TAKUM_LOG_WRAPPER(arccot_over_pi, arccot_over_pi,
+                                   RESULT_FIXER_MACRO)
